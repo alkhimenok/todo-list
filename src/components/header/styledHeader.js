@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import { LG_SIZE, XXL_SIZE, THIRD_FONT } from '../../constants/styled'
 
-export const HeaderSection = styled.section`
+export const HeaderSection = styled.header`
 	text-align: center;
 `
 export const HeaderLogo = styled.img`

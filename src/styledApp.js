@@ -3,6 +3,7 @@ import { getDisplayFlex, forChildren } from './utils/styled'
 import {
 	MAX_WIDTH,
 	MAX_HEIGHT,
+	CONTAINER_WIDTH,
 	XL_SIZE,
 	THIRD_COLOR,
 	PRIMARY_GRADIENT,
@@ -25,6 +26,9 @@ export const Reset = createGlobalStyle`
   button {
     font-family: ${PRIMARY_FONT};
     color: ${PRIMARY_COLOR};
+  }
+  i {
+    line-height: 0;
   }
   @media screen and (min-width: ${BREAKPOINT_SM_MIN}) {
     html,
@@ -92,20 +96,24 @@ export const Icons = createGlobalStyle`
 `
 
 export const Wrapper = styled.div`
+  min-width: 100vw;
 	min-height: 100vh;
 	${getDisplayFlex('center', 'space-between', 'column')}
 	${forChildren('width: 100%;')}
 	background: ${PRIMARY_GRADIENT};
 `
-export const Container = styled.div`
+export const Content = styled.div`
 	max-width: ${MAX_WIDTH};
-  max-height: ${MAX_HEIGHT};
+	max-height: ${MAX_HEIGHT};
 	margin: auto;
+	background-color: ${THIRD_COLOR};
+	border-radius: ${BORDER_RADIUS_OVAL};
+`
+export const Container = styled.div`
+	max-width: calc(${CONTAINER_WIDTH} + ${XL_SIZE} * 2); // Body padding
+  margin: 0 auto;
 `
 export const Body = styled.div`
 	height: ${MAX_HEIGHT};
-	margin: auto;
 	padding: ${XL_SIZE};
-	background-color: ${THIRD_COLOR};
-	border-radius: ${BORDER_RADIUS_OVAL};
 `

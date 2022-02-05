@@ -5,7 +5,13 @@ const Form = ({ handleSubmit }) => {
 	const [value, setValue] = useState('')
 
 	return (
-		<FormWrapper onSubmit={handleSubmit}>
+		<FormWrapper
+			onSubmit={e => {
+				handleSubmit(value)
+				setValue('')
+
+				e.preventDefault()
+			}}>
 			<FormFieldset>
 				<FormInput type="text" value={value} placeholder=" " onChange={e => setValue(e.target.value)} />
 				<FormLabel>Add new todo...</FormLabel>

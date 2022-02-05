@@ -15,7 +15,7 @@ import {
 
 export const FormWrapper = styled.form`
 	${getDisplayFlex()}
-	padding: ${XXL_SIZE};
+	padding: ${XXL_SIZE} 0;
 `
 export const FormFieldset = styled.fieldset`
 	flex: 0 1 320px;
