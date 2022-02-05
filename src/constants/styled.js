@@ -21,9 +21,9 @@ export const PRIMARY_GRADIENT =
 	'linear-gradient(303.79deg, #FCC3E0 -53.74%, #D9BEFB -7.23%, #D7BEFC -4.64%, #BCB1FC 40.96%, #A1AEFC 83.05%, #94BDFC 127.47%, #8EC5FC 170.73%), linear-gradient(0deg, #84FAB0 0%, #85F9BC 21.87%, #88F8D7 42.19%, #8BF6F5 60.94%, #8EDDF5 80.73%, #8FD3F4 100%)'
 // export const SECONDARY_GRADIENT = 'linear-gradient(45deg, rgba(69, 84, 177, 0.5) 0%, rgba(167, 131, 226, 0.7) 100%)'
 
-export const PRIMARY_FONT = 'latoRegular'
-export const SECONDARY_FONT = 'latoBold'
-export const THIRD_FONT = 'latoBold'
+export const PRIMARY_FONT = 'interRegular'
+export const SECONDARY_FONT = 'interSemiBold'
+export const THIRD_FONT = 'interBold'
 
 // export const BORDER_RADIUS_CIRCLE = '50%'
 export const BORDER_RADIUS_OVAL = parseInt(BASE_SIZE) * 2.4 + 'rem'
