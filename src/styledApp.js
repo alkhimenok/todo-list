@@ -3,7 +3,7 @@ import { getDisplayFlex, forChildren } from './utils/styled'
 import {
 	MAX_WIDTH,
 	MAX_HEIGHT,
-	XXL_SIZE,
+	XL_SIZE,
 	THIRD_COLOR,
 	PRIMARY_GRADIENT,
 	PRIMARY_FONT,
@@ -105,7 +105,7 @@ export const Container = styled.div`
 export const Body = styled.div`
 	height: ${MAX_HEIGHT};
 	margin: auto;
-	padding: ${XXL_SIZE};
+	padding: ${XL_SIZE};
 	background-color: ${THIRD_COLOR};
 	border-radius: ${BORDER_RADIUS_OVAL};
 `
