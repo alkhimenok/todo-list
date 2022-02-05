@@ -27,13 +27,13 @@ export const SECONDARY_FONT = 'interSemiBold'
 export const THIRD_FONT = 'interBold'
 
 // export const BORDER_RADIUS_CIRCLE = '50%'
-export const BORDER_RADIUS_OVAL = parseInt(BASE_SIZE) * 2.4 + 'rem'
-export const BORDER_RADIUS_SUPERELLIPSE = parseInt(BASE_SIZE) * 0.8 + 'rem'
 export const THIN_BORDER = parseInt(BASE_SIZE) * 0.1 + 'rem  solid'
 // export const THICK_BORDER = parseInt(BASE_SIZE) * 0.6 + 'rem' + ' solid'
+export const BORDER_RADIUS_OVAL = parseInt(BASE_SIZE) * 2.4 + 'rem'
+export const BORDER_RADIUS_SUPERELLIPSE = parseInt(BASE_SIZE) * 0.8 + 'rem'
 
-export const DELAY = '0.2s'
-export const LONG_DELAY = '0.4s ease-in-out'
+export const DELAY = 'all 0.2s'
+export const LONG_DELAY = 'all 0.4s ease-in-out'
 
 export const BREAKPOINT_XS_MIN = '0px'
 export const BREAKPOINT_XS_MAX = '576px'

@@ -30,3 +30,19 @@ export const forChildren = styles => {
     }
   `
 }
+
+export const forFirstChild = styles => {
+	return `
+    & > :first-child{
+      ${styles}
+    }
+  `
+}
+
+export const forLastChild = styles => {
+	return `
+    & > :last-child{
+      ${styles}
+    }
+  `
+}
