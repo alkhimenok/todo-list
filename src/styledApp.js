@@ -1,5 +1,17 @@
-import { createGlobalStyle } from 'styled-components'
-import { PRIMARY_FONT, PRIMARY_COLOR, BREAKPOINT_SM_MIN, BREAKPOINT_XS_MAX } from './constants/styled'
+import styled, { createGlobalStyle } from 'styled-components'
+import { getDisplayFlex, forChildren } from './utils/styled'
+import {
+	MAX_WIDTH,
+	MAX_HEIGHT,
+	XXL_SIZE,
+	THIRD_COLOR,
+	PRIMARY_GRADIENT,
+	PRIMARY_FONT,
+	PRIMARY_COLOR,
+	BORDER_RADIUS_OVAL,
+	BREAKPOINT_SM_MIN,
+	BREAKPOINT_XS_MAX
+} from './constants/styled'
 
 export const Reset = createGlobalStyle`
   ${require('reset-css')};
@@ -15,11 +27,11 @@ export const Reset = createGlobalStyle`
     color: ${PRIMARY_COLOR};
   }
   @media screen and (min-width: ${BREAKPOINT_SM_MIN}) {
-    html
+    html,
     body,
     input,
     button {
-      font-size: 10px;
+      font-size: 10px
     }
   }
   @media screen and (max-width: ${BREAKPOINT_XS_MAX}) {
@@ -31,7 +43,6 @@ export const Reset = createGlobalStyle`
     }
   }
 `
-
 export const Fonts = createGlobalStyle`
   @font-face {
     font-family: 'interRegular';
@@ -46,7 +57,6 @@ export const Fonts = createGlobalStyle`
     src: url('./assets/fonts/Inter-Bold.ttf') ;
   }
 `
-
 export const Icons = createGlobalStyle`
   @font-face {
     font-family: 'icons';
@@ -79,4 +89,23 @@ export const Icons = createGlobalStyle`
   .icon-pencil:before {
     content: "\\e902";
   }
+`
+
+export const Wrapper = styled.div`
+	min-height: 100vh;
+	${getDisplayFlex('center', 'space-between', 'column')}
+	${forChildren('width: 100%;')}
+	background: ${PRIMARY_GRADIENT};
+`
+export const Container = styled.div`
+	max-width: ${MAX_WIDTH};
+  max-height: ${MAX_HEIGHT};
+	margin: auto;
+`
+export const Body = styled.div`
+	height: ${MAX_HEIGHT};
+	margin: auto;
+	padding: ${XXL_SIZE};
+	background-color: ${THIRD_COLOR};
+	border-radius: ${BORDER_RADIUS_OVAL};
 `

@@ -1,5 +1,5 @@
 import React from 'react'
-import { Fonts, Icons, Reset } from './styledApp'
+import { Fonts, Icons, Reset, Wrapper, Container, Body } from './styledApp'
 
 const App = () => {
 	return (
@@ -7,7 +7,13 @@ const App = () => {
 			<Fonts />
 			<Icons />
 			<Reset />
-			<h1 className='icon-pencil'>hello</h1>
+
+			<Wrapper>
+				<Container>
+					<Body>
+					</Body>
+				</Container>
+			</Wrapper>
 		</>
 	)
 }
