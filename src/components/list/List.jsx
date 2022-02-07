@@ -8,7 +8,7 @@ const List = ({ todoList }) => {
 		<ListWrapper>
 			{todoList
 				.sort((a, b) => a.index - b.index)
-				.map(todo => (
+				.map((todo) => (
 					<Todo key={uid()} todo={todo} />
 				))}
 		</ListWrapper>

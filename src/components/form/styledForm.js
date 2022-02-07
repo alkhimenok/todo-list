@@ -75,7 +75,7 @@ export const FormButton = styled.button`
 	&:active {
 		background-color: ${SECONDARY_COLOR};
 	}
-	${props =>
+	${(props) =>
 		props.hide
 			? `
           width: 0px;

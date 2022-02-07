@@ -96,7 +96,7 @@ export const Icons = createGlobalStyle`
 `
 
 export const Wrapper = styled.div`
-  min-width: 100vw;
+	min-width: 100vw;
 	min-height: 100vh;
 	${getDisplayFlex('center', 'space-between', 'column')}
 	${forChildren('width: 100%;')}
@@ -111,7 +111,7 @@ export const Content = styled.div`
 `
 export const Container = styled.div`
 	max-width: calc(${CONTAINER_WIDTH} + ${XL_SIZE} * 2); // Body padding
-  margin: 0 auto;
+	margin: 0 auto;
 `
 export const Body = styled.div`
 	height: ${MAX_HEIGHT};

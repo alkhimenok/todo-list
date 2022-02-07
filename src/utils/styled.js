@@ -1,4 +1,9 @@
-export const getDisplayFlex = (alignItems = 'center', justifyContent = 'center', flexDirection = 'row', flexWrap = 'nowrap') => {
+export const getDisplayFlex = (
+	alignItems = 'center',
+	justifyContent = 'center',
+	flexDirection = 'row',
+	flexWrap = 'nowrap'
+) => {
 	return `
     display: flex;
     align-items: ${alignItems};
@@ -8,7 +13,12 @@ export const getDisplayFlex = (alignItems = 'center', justifyContent = 'center',
   `
 }
 
-export const getScroll = (scrollWidth = '4px', trackColor = 'gray', thumbColor = 'blue', fillets = '10px', isHide = false) => {
+export const getScroll = (
+	scrollWidth = '4px',
+	trackColor = 'gray',
+	thumbColor = 'blue',
+	fillets = '10px'
+) => {
 	return `
     &::-webkit-scrollbar {
       width: ${scrollWidth} !important;
@@ -23,7 +33,7 @@ export const getScroll = (scrollWidth = '4px', trackColor = 'gray', thumbColor =
   `
 }
 
-export const forChildren = styles => {
+export const forChildren = (styles) => {
 	return `
     & > * {
       ${styles}
@@ -31,7 +41,7 @@ export const forChildren = styles => {
   `
 }
 
-export const forFirstChild = styles => {
+export const forFirstChild = (styles) => {
 	return `
     & > :first-child{
       ${styles}
@@ -39,7 +49,7 @@ export const forFirstChild = styles => {
   `
 }
 
-export const forLastChild = styles => {
+export const forLastChild = (styles) => {
 	return `
     & > :last-child{
       ${styles}

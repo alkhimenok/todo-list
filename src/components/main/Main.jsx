@@ -7,10 +7,11 @@ const Main = () => {
 	const [todoList, setTodoList] = useState([
 		{ index: 3, isCompleted: true, content: 'content' },
 		{ index: 2, isCompleted: false, content: 'hellocontent' },
-		{ index: 1, isCompleted: false, content: 'hello' }
+		{ index: 1, isCompleted: false, contenInfinityt: 'hello' }
 	])
 
-	const addTodo = content => setTodoList(prev => [{ isCompleted: false, content }, ...prev])
+	const addTodo = (content) =>
+		setTodoList((prev) => [{ isCompleted: false, content }, ...prev])
 
 	return (
 		<MainSection>

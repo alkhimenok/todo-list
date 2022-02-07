@@ -18,17 +18,21 @@ const Todo = ({ todo }) => {
 	return (
 		<TodoWrapper>
 			<TodoButtonDrag>
-				<i className="icon-drag"></i>
+				<i className='icon-drag'></i>
 			</TodoButtonDrag>
 			<TodoLabel>
-				<TodoCheckbox type="checkbox" checked={todoCompleted} onChange={() => setTodoCompleted(prev => !prev)} />
+				<TodoCheckbox
+					type='checkbox'
+					checked={todoCompleted}
+					onChange={() => setTodoCompleted((prev) => !prev)}
+				/>
 				<TodoContent>{content}</TodoContent>
 				<TodoForm>
 					<TodoButtonChange>
-						<i className="icon-pencil"></i>
+						<i className='icon-pencil'></i>
 					</TodoButtonChange>
 					<TodoButtonDelete>
-						<i className="icon-bin"></i>
+						<i className='icon-bin'></i>
 					</TodoButtonDelete>
 				</TodoForm>
 			</TodoLabel>
