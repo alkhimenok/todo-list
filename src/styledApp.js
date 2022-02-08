@@ -42,25 +42,26 @@ const Reset = createGlobalStyle`
 const Fonts = createGlobalStyle`
   @font-face {
     font-family: 'interRegular';
-    src: url('/assets/fonts/Inter-Regular.ttf');
+    src: url(${require('./assets/fonts/Inter-Regular.ttf')});
   }
   @font-face {
     font-family: 'interSemiBold';
-    src: url('./assets/fonts/Inter-SemiBold.ttf');
+    src: url(${require('./assets/fonts/Inter-SemiBold.ttf')});
   }
   @font-face {
     font-family: 'interBold';
-    src: url('./assets/fonts/Inter-Bold.ttf') ;
+    src: url(${require('./assets/fonts/Inter-Bold.ttf')});
   }
 `
 const Icons = createGlobalStyle`
   @font-face {
     font-family: 'icons';
-    src:  url('/assets/icons/icons.eot?mbjhc7');
-    src:  url('/assets/icons/icons.eot?mbjhc7#iefix') format('embedded-opentype'),
-      url('/assets/icons/icons.ttf?mbjhc7') format('truetype'),
-      url('/assets/icons/icons.woff?mbjhc7') format('woff'),
-      url('/assets/icons/icons.svg?mbjhc7#icons') format('svg');
+    src:  url(${require('./assets/icons/icons.ttf')});
+    /* src:  url('./assets/icons/icons.eot?mbjhc7');
+    src:  url('./assets/icons/icons.eot?mbjhc7#iefix') format('embedded-opentype'),
+      url('./assets/icons/icons.ttf?mbjhc7') format('truetype'),
+      url('./assets/icons/icons.woff?mbjhc7') format('woff'),
+      url('./assets/icons/icons.svg?mbjhc7#icons') format('svg'); */
     font-weight: normal;
     font-style: normal;
     font-display: block;
@@ -91,6 +92,7 @@ const Wrapper = styled.div`
 	min-width: 100vw;
 	min-height: 100vh;
 	${getDisplayFlex('center', 'space-between', 'column')}
+	padding: ${UNITS.XS_SIZE};
 	${forChildren('width: 100%;')}
 	background: ${COLORS.PRIMARY_GRADIENT};
 `

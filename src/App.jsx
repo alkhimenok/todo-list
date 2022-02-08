@@ -1,4 +1,6 @@
 import React from 'react'
+import Header from './components/header/Header'
+import Main from './components/main/Main'
 import * as Styled from './styledApp'
 
 const App = () => {
@@ -12,11 +14,8 @@ const App = () => {
 				<Styled.Content>
 					<Styled.Container>
 						<Styled.Body>
-							<h1 className='icon-bin' style={{ fontSize: '4rem' }}>
-								hello
-							</h1>
-							{/* <Header />
-							<Main /> */}
+							<Header />
+							<Main />
 						</Styled.Body>
 					</Styled.Container>
 				</Styled.Content>
