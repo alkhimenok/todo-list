@@ -37,6 +37,15 @@
 			"last 1 safari version"
 		]
 	},
+	"husky": {
+		"hooks": {
+			"pre-commit": "lint-staged"
+		}
+	},
+	"lint-staged": {
+		"*": "your-cmd",
+		".js": ["npm run format", "npm run lint:fix", "git add"]
+	},
 	"devDependencies": {
 		"eslint": "^8.8.0",
 		"eslint-config-prettier": "^8.3.0",
