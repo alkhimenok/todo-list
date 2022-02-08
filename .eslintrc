@@ -1,23 +1,24 @@
 {
+	"root": true,
 	"extends": [
 		"eslint:recommended",
 		"plugin:react/recommended",
 		"plugin:prettier/recommended",
 		"prettier"
 	],
-	"plugins": ["react", "prettier"],
-	"settings": {
-		"react": {
-			"version": "detect"
-		}
-	},
+	// "plugins": ["react", "prettier"], // "react", 
+	// "settings": {
+	// 	"react": {
+	// 		"version": "detect"
+	// 	}
+	// },
 	"parserOptions": {
 		"ecmaVersion": 6,
 		"sourceType": "module",
-		"ecmaFeatures": {
-			"jsx": true,
-			"experimentalObjectRestSpread": true
-		}
+		// "ecmaFeatures": {
+		// 	"jsx": true,
+		// 	"experimentalObjectRestSpread": true
+		// }
 	},
 	"env": {
 		"browser": true,
@@ -197,11 +198,20 @@
 		"operator-linebreak": "error",
 		"padded-blocks": "error",
 		"quote-props": "error",
-		"quotes": "error",
+		"quotes": ["error", "single"], //
 		"require-jsdoc": "error",
-		"semi": "error",
+		"semi": ["error", "never"], //
 		"semi-spacing": "error",
-		"sort-imports": "error",
+		"sort-imports": [
+			"error",
+			{
+				"ignoreCase": true,
+				"ignoreDeclarationSort": true,
+				"ignoreMemberSort": false,
+				"memberSyntaxSortOrder": ["none", "all", "multiple", "single"],
+				"allowSeparatedGroups": true
+			}
+		], //
 		"sort-vars": "error",
 		"space-before-blocks": "error",
 		"space-before-function-paren": "error",

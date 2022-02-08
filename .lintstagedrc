@@ -1,0 +1,4 @@
+{
+  "*": "your-cmd",
+  ".js": ["npm run format", "npm run lint:fix", "git add"]
+}
