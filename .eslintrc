@@ -6,7 +6,7 @@
 		"plugin:prettier/recommended",
 		"prettier"
 	],
-	// "plugins": ["react", "prettier"], // "react", 
+	// "plugins": ["react", "prettier"], // "react",
 	// "settings": {
 	// 	"react": {
 	// 		"version": "detect"
@@ -14,7 +14,7 @@
 	// },
 	"parserOptions": {
 		"ecmaVersion": 6,
-		"sourceType": "module",
+		"sourceType": "module"
 		// "ecmaFeatures": {
 		// 	"jsx": true,
 		// 	"experimentalObjectRestSpread": true
@@ -28,7 +28,7 @@
 		"worker": true
 	},
 	"rules": {
-		"indent": ["error", "tab"],
+		"indent": ["error", "tab"], //
 		"comma-dangle": "error",
 		"no-cond-assign": "error",
 		"no-console": "error",
@@ -86,12 +86,12 @@
 		"no-implicit-coercion": "error",
 		"no-implicit-globals": "error",
 		"no-implied-eval": "error",
-		"no-invalid-this": "error",
+		"no-invalid-this": "off", //
 		"no-iterator": "error",
 		"no-labels": "error",
 		"no-lone-blocks": "error",
 		"no-loop-func": "error",
-		"no-magic-numbers": "error",
+		"no-magic-numbers": "off", //
 		"no-multi-spaces": "error",
 		"no-multi-str": "error",
 		"no-native-reassign": "error",
@@ -118,7 +118,7 @@
 		"no-void": "error",
 		"no-warning-comments": "error",
 		"no-with": "error",
-		"radix": "error",
+		"radix": ["error", "as-needed"], //
 		"vars-on-top": "error",
 		"wrap-iife": "error",
 		"yoda": "error",
@@ -134,7 +134,7 @@
 		"no-unused-vars": "error",
 		"no-use-before-define": "error",
 		"callback-return": "error",
-		"global-require": "error",
+		"global-require": "warn",
 		"handle-callback-err": "error",
 		"no-mixed-requires": "error",
 		"no-new-require": "error",
@@ -158,15 +158,28 @@
 		"id-blacklist": "error",
 		"id-length": "error",
 		"id-match": "error",
-		"jsx-quotes": "error",
+		"jsx-quotes": ["error", "prefer-single"], //
 		"key-spacing": "error",
 		"keyword-spacing": "error",
 		"linebreak-style": "error",
 		"lines-around-comment": "error",
 		"max-depth": "error",
-		"max-len": "error",
+		"max-len": [
+			"error",
+			{
+				"code": 80,
+				"tabWidth": 2,
+				"comments": 65,
+				"ignoreComments": true,
+				"ignoreTrailingComments": true,
+				"ignoreUrls": true,
+				"ignoreStrings": true,
+				"ignoreTemplateLiterals": true,
+				"ignoreRegExpLiterals": true
+			}
+		], //
 		"max-nested-callbacks": "error",
-		"max-params": "error",
+		"max-params": "off",
 		"max-statements": "error",
 		"max-statements-per-line": "error",
 		"new-cap": "error",
@@ -191,13 +204,20 @@
 		"no-underscore-dangle": "error",
 		"no-unneeded-ternary": "error",
 		"no-whitespace-before-property": "error",
-		"object-curly-spacing": "error",
-		"one-var": "error",
+		"object-curly-spacing": [
+			"error",
+			"always",
+			{ "arraysInObjects": false, "objectsInObjects": false }
+		], //
+		"one-var": ["error", "never"], //
 		"one-var-declaration-per-line": "error",
 		"operator-assignment": "error",
 		"operator-linebreak": "error",
-		"padded-blocks": "error",
-		"quote-props": "error",
+		"padded-blocks": [
+			"error",
+			{ "blocks": "never", "classes": "never", "switches": "never" }
+		], //
+		"quote-props": ["error", "as-needed"], //
 		"quotes": ["error", "single"], //
 		"require-jsdoc": "error",
 		"semi": ["error", "never"], //
@@ -207,7 +227,7 @@
 			{
 				"ignoreCase": true,
 				"ignoreDeclarationSort": true,
-				"ignoreMemberSort": false,
+				"ignoreMemberSort": true,
 				"memberSyntaxSortOrder": ["none", "all", "multiple", "single"],
 				"allowSeparatedGroups": true
 			}
@@ -220,8 +240,8 @@
 		"space-unary-ops": "error",
 		"spaced-comment": "error",
 		"wrap-regex": "error",
-		"no-tabs": "error",
-		"arrow-body-style": "error",
+		"no-tabs": ["error", { "allowIndentationTabs": true }], //
+		"arrow-body-style": "off", //
 		"arrow-parens": "error",
 		"arrow-spacing": "error",
 		"constructor-super": "error",
@@ -249,9 +269,3 @@
 		"yield-star-spacing": "error"
 	}
 }
-
-// npm install --save-dev eslint eslint-plugin-prettier eslint-config-prettier
-// npm install --save-dev eslint-plugin-react
-
-// "lint": "npx eslint ."
-// "lint:fix": "npx eslint . --fix"

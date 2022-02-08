@@ -1,0 +1,11 @@
+export const PRIMARY = '#202427'
+export const SECONDARY = '#C7CCD1'
+export const TERTIARY = '#ffffff'
+export const PRIMARY_DARK = '#959595'
+export const SECONDARY_DARK = '#5D5FEF'
+export const TERTIARY_DARK = '#EF5DA8'
+export const DANGER = '#EC3535'
+export const WARNING = '#4B4B4B'
+export const SUCCESS = '#2578F4'
+export const PRIMARY_GRADIENT =
+	'linear-gradient(303.79deg, #FCC3E0 -53.74%, #D9BEFB -7.23%, #D7BEFC -4.64%, #BCB1FC 40.96%, #A1AEFC 83.05%, #94BDFC 127.47%, #8EC5FC 170.73%), linear-gradient(0deg, #84FAB0 0%, #85F9BC 21.87%, #88F8D7 42.19%, #8BF6F5 60.94%, #8EDDF5 80.73%, #8FD3F4 100%)'
