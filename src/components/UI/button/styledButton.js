@@ -4,6 +4,7 @@ import * as FONTS from '../../../constants/fonts'
 import * as COLORS from '../../../constants/colors'
 import * as BORDERS from '../../../constants/borders'
 import * as TRANSITIONS from '../../../constants/transitions'
+import * as TRANSPARENCY from '../../../constants/transparency'
 
 const ButtonWrapper = styled.button`
 	padding: ${UNITS.XS_SIZE} ${UNITS.MD_SIZE};
@@ -23,7 +24,7 @@ const ButtonWrapper = styled.button`
 		}
 	}
 	&:active {
-    color: ${COLORS.TERTIARY};
+		color: ${COLORS.TERTIARY};
 		background-color: ${COLORS.SECONDARY};
 	}
 	${({ isFocused }) =>
@@ -32,9 +33,11 @@ const ButtonWrapper = styled.button`
         color: ${COLORS.TERTIARY};
         background-color: ${COLORS.SUCCESS};
       `
-      : `
+			: `
         background-color: transparent;
       `}
+	${({ isHide }) =>
+		isHide && `opacity: ${TRANSPARENCY.INVISIBLE}; pointer-events: none;`}
 `
 
 export { ButtonWrapper }

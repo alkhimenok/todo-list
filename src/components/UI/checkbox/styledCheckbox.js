@@ -13,8 +13,8 @@ const CheckboxWrapper = styled.div`
       height: ${size};
     `
 			: ` 
-      width: ${UNITS.XL_SIZE};
-      height: ${UNITS.XL_SIZE};
+      width: ${UNITS.LG_SIZE};
+      height: ${UNITS.LG_SIZE};
     `}
 `
 const CheckboxLabel = styled.label`

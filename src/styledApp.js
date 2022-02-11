@@ -24,6 +24,9 @@ const Reset = createGlobalStyle`
   i {
     line-height: 0;
   }
+  li {
+    list-style: none;
+  }
   @media screen and (min-width: ${BREAKPOINTS.SM_MIN}) {
     html,
     body,

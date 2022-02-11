@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import Form from '../form/Form'
 import List from '../list/List'
+import Todo from '../todo/Todo'
 import * as Styled from './styledMain'
 
 const Main = () => {
