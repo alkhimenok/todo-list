@@ -1,15 +1,20 @@
 import React from 'react'
+import PropTypes from 'prop-types'
+import Todo from '../todo/Todo'
 import * as Styled from './styledList'
 
 const List = ({ todoList }) => {
-	// const list = useList()
 	return (
 		<Styled.ListWrapper>
-			{todoList.map((todo) => (
-				<li>{todo.content}</li>
+			{todoList.map(({ id, content, isCompleted }) => (
+				<Todo id={id} key={id} content={content} isCompleted={isCompleted} />
 			))}
 		</Styled.ListWrapper>
 	)
+}
+
+List.propTypes = {
+	todoList: PropTypes.array
 }
 
 export default List

@@ -12,7 +12,8 @@ const IconButton = ({ icon, size, isDisable }) => {
 
 IconButton.propTypes = {
 	icon: PropTypes.string.isRequired,
-	size: PropTypes.string
+	size: PropTypes.string,
+	isDisable: PropTypes.bool
 }
 
 export default IconButton

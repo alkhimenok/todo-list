@@ -12,12 +12,10 @@ const App = () => {
 
 			<Styled.Wrapper>
 				<Styled.Content>
-					<Styled.Container>
-						<Styled.Body>
-							<Header />
-							<Main />
-						</Styled.Body>
-					</Styled.Container>
+					<Styled.Body>
+						<Header />
+						<Main />
+					</Styled.Body>
 				</Styled.Content>
 			</Styled.Wrapper>
 		</>

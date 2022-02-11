@@ -7,7 +7,7 @@ export const useTodo = (isCompleted) => {
 	const handleMouseOver = () => {
 		setHovered(true)
 	}
-  
+
 	const handleMouseOut = () => {
 		setHovered(false)
 	}

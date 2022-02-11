@@ -3,7 +3,11 @@ import PropTypes from 'prop-types'
 import { ButtonWrapper } from './styledButton'
 
 const Button = ({ content, isFocused, isHide }) => {
-	return <ButtonWrapper isFocused={isFocused}>{content}</ButtonWrapper>
+	return (
+		<ButtonWrapper isFocused={isFocused} isHide={isHide}>
+			{content}
+		</ButtonWrapper>
+	)
 }
 
 Button.propTypes = {

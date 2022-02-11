@@ -8,12 +8,9 @@ const TodoWrapper = styled.li`
 	position: relative;
 	${getDisplayFlex('center', 'space-between')};
 	cursor: pointer;
+	padding: 0 ${UNITS.LG_SIZE} 0 0;
 `
 const TodoDrag = styled.div`
-	position: absolute;
-	top: 50%;
-	left: 0;
-	transform: translate(-100%, -50%);
 	transition: ${TRANSITIONS.SHORT};
 	@media screen and (hover: hover) {
 		${({ isHovered }) =>

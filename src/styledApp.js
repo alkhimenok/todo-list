@@ -109,10 +109,6 @@ const Content = styled.div`
 	background-color: ${COLORS.TERTIARY};
 	border-radius: ${BORDERS.RADIUS_OVAL};
 `
-const Container = styled.div`
-	max-width: calc(${UNITS.CONTAINER_WIDTH} + ${UNITS.XL_SIZE} * 2);
-	margin: 0 auto;
-`
 const Body = styled.div`
 	padding: ${UNITS.XL_SIZE};
 	@media screen and (min-height: calc(${UNITS.MAX_HEIGHT} + ${parseFloat(
@@ -128,4 +124,4 @@ const Body = styled.div`
 	}
 `
 
-export { Reset, Fonts, Icons, Wrapper, Content, Container, Body }
+export { Reset, Fonts, Icons, Wrapper, Content, Body }
