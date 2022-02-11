@@ -1,10 +1,10 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import * as Styled from './styledForm'
-import { useForm } from './useForm'
+import { useSubmit } from './useSubmit'
 
 const Form = ({ handleSubmit }) => {
-	const { submitForm, value, changeValue, isInputEmpty } = useForm(handleSubmit)
+	const { submitForm, value, changeValue, isInputEmpty } = useSubmit(handleSubmit)
 
 	return (
 		<Styled.FormWrapper onSubmit={submitForm}>

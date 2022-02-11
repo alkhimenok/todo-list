@@ -68,16 +68,15 @@ const FormButton = styled.button`
 	&:active {
 		background-color: ${COLORS.SECONDARY};
 	}
-	${(props) =>
-		props.hide
-			? `
-          width: 0px;
-          margin: 0%;
-          padding: ${UNITS.XS_SIZE} 0;
-          opacity: 0;
-          transition: all ${TRANSITIONS.LONG}, opacity ${TRANSITIONS.SHORT} ${TRANSITIONS.SHORT};
-        `
-			: ''}
+	${({ hide }) =>
+		hide &&
+		`
+			width: 0px;
+			margin: 0%;
+			padding: ${UNITS.XS_SIZE} 0;
+			opacity: 0;
+			transition: all ${TRANSITIONS.LONG}, opacity ${TRANSITIONS.SHORT} ${TRANSITIONS.SHORT};
+    `}
 `
 
 export { FormWrapper, FormFieldset, FormInput, FormLabel, FormButton }

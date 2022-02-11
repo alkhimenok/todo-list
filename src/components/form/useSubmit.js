@@ -1,10 +1,10 @@
 import { useState } from 'react'
 
-export const useForm = (handleSubmit) => {
+export const useSubmit = (handleSubmit) => {
 	const [value, setValue] = useState('')
 
 	const submitForm = (e) => {
-		handleSubmit()
+		handleSubmit(value)
 		setValue('')
 
 		e.preventDefault()
