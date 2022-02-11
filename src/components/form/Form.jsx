@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import Button from '../UI/button/Button'
 import * as Styled from './styledForm'
 import { useSubmit } from './useSubmit'
 
@@ -18,9 +19,9 @@ const Form = ({ handleSubmit }) => {
 				/>
 				<Styled.FormLabel>Add new todo...</Styled.FormLabel>
 			</Styled.FormFieldset>
-			<Styled.FormButton type='submit' hide={isInputEmpty}>
-				Submit
-			</Styled.FormButton>
+			<Styled.FormButtonWrapper hide={isInputEmpty}>
+				<Button type='submit' content={'Submit'} isFocused={true} />
+			</Styled.FormButtonWrapper>
 		</Styled.FormWrapper>
 	)
 }

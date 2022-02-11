@@ -18,11 +18,12 @@ const ButtonWrapper = styled.button`
 			&:hover {
 				color: ${COLORS.SUCCESS};
 				background-color: ${COLORS.TERTIARY};
-				border: ${BORDERS.THIN} ${COLORS.SUCCESS};
+				border-color: ${COLORS.SUCCESS};
 			}
 		}
 	}
 	&:active {
+    color: ${COLORS.TERTIARY};
 		background-color: ${COLORS.SECONDARY};
 	}
 	${({ isFocused }) =>

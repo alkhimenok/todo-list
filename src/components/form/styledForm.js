@@ -1,7 +1,6 @@
 import styled from 'styled-components'
 import { getDisplayFlex } from '../../utils/styled'
 import * as UNITS from '../../constants/units'
-import * as FONTS from '../../constants/fonts'
 import * as COLORS from '../../constants/colors'
 import * as BORDERS from '../../constants/borders'
 import * as TRANSITIONS from '../../constants/transitions'
@@ -43,40 +42,22 @@ const FormLabel = styled.label`
 	pointer-events: none;
 	transition: all ${TRANSITIONS.SHORT};
 `
-const FormButton = styled.button`
+const FormButtonWrapper = styled.div`
 	width: 80px;
 	margin: 0 0 0 ${UNITS.MD_SIZE};
-	padding: ${UNITS.XS_SIZE} ${UNITS.MD_SIZE};
-	font-family: ${FONTS.SECONDARY};
-	font-size: ${UNITS.MD_SIZE};
-	color: ${COLORS.TERTIARY};
-	background-color: ${COLORS.SUCCESS};
-	border: ${BORDERS.THIN} transparent;
 	border-radius: ${BORDERS.RADIUS_SUPERELLIPSE};
 	overflow: hidden;
 	transition: all ${TRANSITIONS.LONG};
-	cursor: pointer;
-	@media screen and (hover: hover) {
-		&:not(:active) {
-			&:hover {
-				color: ${COLORS.SUCCESS};
-				background-color: ${COLORS.TERTIARY};
-				border: ${BORDERS.THIN} ${COLORS.SUCCESS};
-			}
-		}
-	}
-	&:active {
-		background-color: ${COLORS.SECONDARY};
+	button {
+		width: 100%;
 	}
 	${({ hide }) =>
 		hide &&
 		`
-			width: 0px;
+			width: 0%;
 			margin: 0%;
-			padding: ${UNITS.XS_SIZE} 0;
-			opacity: 0;
-			transition: all ${TRANSITIONS.LONG}, opacity ${TRANSITIONS.SHORT} ${TRANSITIONS.SHORT};
+			transition: all ${TRANSITIONS.LONG} ${TRANSITIONS.SHORT};
     `}
 `
 
-export { FormWrapper, FormFieldset, FormInput, FormLabel, FormButton }
+export { FormWrapper, FormFieldset, FormInput, FormLabel, FormButtonWrapper }
