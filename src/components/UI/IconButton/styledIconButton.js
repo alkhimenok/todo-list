@@ -25,7 +25,7 @@ const IconButtonWrapper = styled.button`
 	&:active {
 		opacity: 0.8;
 	}
-	${({ isDisable }) => isDisable && `opacity: 0.5; pointer-events: none`}
+	${({ isDisable }) => isDisable && 'opacity: 0.5; pointer-events: none'}
 `
 const IconButtonPicture = styled.i``
 

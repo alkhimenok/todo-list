@@ -40,14 +40,14 @@ const CheckboxLabel = styled.label`
 	${({ isChecked }) =>
 		isChecked &&
 		`
-    background-color: ${COLORS.SUCCESS};
-    border-color: ${COLORS.SUCCESS};
-    transition: all ${TRANSITIONS.SHORT};
-    &:before {
-      transform: translate(-50%, -65%) rotate(-135deg) scale(1);
-      transition: all ${TRANSITIONS.SHORT} ${TRANSITIONS.SHORT};
-    }
-  `}
+			background-color: ${COLORS.SUCCESS};
+			border-color: ${COLORS.SUCCESS};
+			transition: all ${TRANSITIONS.SHORT};
+			&:before {
+				transform: translate(-50%, -65%) rotate(-135deg) scale(1);
+				transition: all ${TRANSITIONS.SHORT} ${TRANSITIONS.SHORT};
+			}
+  	`}
 `
 const CheckboxInput = styled.input`
 	display: none;

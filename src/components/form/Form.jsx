@@ -4,7 +4,8 @@ import * as Styled from './styledForm'
 import { useSubmit } from './useSubmit'
 
 const Form = ({ handleSubmit }) => {
-	const { submitForm, value, changeValue, isInputEmpty } = useSubmit(handleSubmit)
+	const { submitForm, value, changeValue, isInputEmpty } =
+		useSubmit(handleSubmit)
 
 	return (
 		<Styled.FormWrapper onSubmit={submitForm}>
