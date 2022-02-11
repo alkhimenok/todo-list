@@ -95,6 +95,7 @@ const Wrapper = styled.div`
 	padding: ${UNITS.XS_SIZE};
 	${forChildren('width: 100%;')}
 	background: ${COLORS.PRIMARY_GRADIENT};
+	overflow: hidden;
 `
 const Content = styled.div`
 	max-width: ${UNITS.MAX_WIDTH};
@@ -108,8 +109,18 @@ const Container = styled.div`
 	margin: 0 auto;
 `
 const Body = styled.div`
-	height: ${UNITS.MAX_HEIGHT};
 	padding: ${UNITS.XL_SIZE};
+	@media screen and (min-height: calc(${UNITS.MAX_HEIGHT} + ${parseFloat(
+			UNITS.XS_SIZE
+		)} * 20px)) {
+		height: ${UNITS.MAX_HEIGHT};
+	}
+	@media screen and (max-height: calc(${UNITS.MAX_HEIGHT} + ${parseFloat(
+			UNITS.XS_SIZE
+		)} * 20px - 1px)) {
+		height: calc(100vh - ${parseFloat(UNITS.XS_SIZE)} * 20px);
+		overflow: auto;
+	}
 `
 
 export { Reset, Fonts, Icons, Wrapper, Content, Container, Body }
