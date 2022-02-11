@@ -9,6 +9,8 @@ import * as BREAKPOINTS from './constants/breakpoints'
 const Reset = createGlobalStyle`
   ${require('reset-css')};
   * {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
     outline: none;
   }
