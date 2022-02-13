@@ -5,14 +5,17 @@ export const useList = () => {
 	const [list, setList] = useState([])
 
 	const addToList = (title) => {
-		setList((prev) => {
-			const newItem = { id: uid(), title, isCompleted: false }
+		const newItem = { id: uid(), title, isCompleted: false }
+		const newList = [newItem, ...list]
 
-			return [newItem, ...prev]
-		})
+		setNewList(newList)
 	}
 
-	const replaceList = (newList) => {
+	const replaceList = (replacedList) => {
+		setNewList(replacedList)
+	}
+
+	const setNewList = (newList) => {
 		setList(newList)
 	}
 

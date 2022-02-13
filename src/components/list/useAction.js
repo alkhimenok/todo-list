@@ -22,8 +22,8 @@ export const useAction = (list, onReplaceList) => {
 		e.preventDefault()
 	}
 
-	const handleActive = () => {
-		setActive(false)
+	const handleActive = (isShow) => {
+		setActive(isShow)
 	}
 
 	const handleApply = (newTitle) => {
