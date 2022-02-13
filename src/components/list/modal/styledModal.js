@@ -13,8 +13,8 @@ const ModalWrapper = styled.div`
 	left: 0;
 	${getDisplayFlex()}
 	background-color: ${COLORS.PRIMARY_TRANSPARENT};
-	${({ hide }) =>
-		hide && 'opacity: 0; user-select: none; pointer-events: none;'}
+	${({ isHide }) =>
+		isHide && 'opacity: 0; user-select: none; pointer-events: none;'}
 	transition: ${TRANSITIONS.LONG};
 `
 const ModalContent = styled.div`

@@ -5,28 +5,28 @@ import Button from '../UI/button/Button'
 import * as Styled from './styledForm'
 import { useSubmit } from './useSubmit'
 
-const Form = ({ handleSubmit }) => {
-	const { value, isInputEmpty, changeValue, submitForm } =
-		useSubmit(handleSubmit)
+const Form = ({ onAddTodo }) => {
+	const { value, isInputEmpty, handleChangeValue, handleAddTodo } =
+		useSubmit(onAddTodo)
 
 	return (
-		<Styled.FormWrapper onSubmit={submitForm}>
+		<Styled.FormWrapper onSubmit={handleAddTodo}>
 			<Styled.FormInputWrapper>
 				<Input
 					label={'Add new todo...'}
 					value={value}
-					handleChange={changeValue}
+					onChange={handleChangeValue}
 				/>
 			</Styled.FormInputWrapper>
 			<Styled.FormButtonWrapper isHide={isInputEmpty}>
-				<Button type={'submit'} content={'Submit'} isFocused={true} />
+				<Button content={'Submit'} type={'submit'} isFocused={true} />
 			</Styled.FormButtonWrapper>
 		</Styled.FormWrapper>
 	)
 }
 
 Form.propTypes = {
-	handleSubmit: PropTypes.func.isRequired
+	onAddTodo: PropTypes.func.isRequired
 }
 
 export default Form

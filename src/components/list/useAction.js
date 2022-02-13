@@ -1,12 +1,12 @@
 import { useState } from 'react'
 import { compressElement } from '../../utils/animation'
 
-export const useAction = (todoList, handleChange) => {
+export const useAction = (list, onReplaceList) => {
 	const [unchangedValue, setUnchangedValue] = useState('')
-	const [active, setActive] = useState(false)
+	const [isActive, setActive] = useState(false)
 	const [todoId, setTodoId] = useState('')
 
-	const actionTodo = (e) => {
+	const handleActionTodo = (e) => {
 		const { currentTarget } = e
 		const { id } = currentTarget
 		const { action } = e.target.dataset
@@ -22,6 +22,22 @@ export const useAction = (todoList, handleChange) => {
 		e.preventDefault()
 	}
 
+	const handleActive = () => {
+		setActive(false)
+	}
+
+	const handleApply = (newTitle) => {
+		onReplaceList(
+			list.map((todo) => {
+				if (todoId === todo.id) {
+					todo.title = newTitle
+				}
+
+				return todo
+			})
+		)
+	}
+
 	const editTodo = (currentTodo, currentId) => {
 		setUnchangedValue(currentTodo.textContent)
 		setActive(true)
@@ -33,15 +49,15 @@ export const useAction = (todoList, handleChange) => {
 		const delay = parseFloat(transitionDuration) * 1000
 
 		setTimeout(() => {
-			handleChange(todoList.filter(({ id }) => id !== currentId))
+			onReplaceList(list.filter(({ id }) => id !== currentId))
 		}, delay)
 
 		compressElement(currentTodo)
 	}
 
 	const toggleCheckedTodo = (currentId) => {
-		handleChange(
-			todoList.map((todo) => {
+		onReplaceList(
+			list.map((todo) => {
 				if (currentId === todo.id) {
 					todo.isCompleted = !todo.isCompleted
 				}
@@ -51,23 +67,11 @@ export const useAction = (todoList, handleChange) => {
 		)
 	}
 
-	const onEditTodo = (newTitle) => {
-		handleChange(
-			todoList.map((todo) => {
-				if (todoId === todo.id) {
-					todo.title = newTitle
-				}
-
-				return todo
-			})
-		)
-	}
-
 	return {
-		actionTodo,
 		unchangedValue,
-		onEditTodo,
-		active,
-		setActive
+		isActive,
+		handleActionTodo,
+		handleActive,
+		handleApply
 	}
 }

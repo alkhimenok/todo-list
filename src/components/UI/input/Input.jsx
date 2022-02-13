@@ -2,14 +2,14 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import * as Styled from './styledInput'
 
-const Input = ({ label, value, handleChange }) => {
+const Input = ({ label, value, onChange }) => {
 	return (
 		<Styled.InputFieldset>
 			<Styled.InputWrapper
 				type='text'
 				placeholder=' '
 				value={value}
-				onChange={handleChange}
+				onChange={onChange}
 			/>
 			<Styled.InputLabel>{label}</Styled.InputLabel>
 		</Styled.InputFieldset>
@@ -19,7 +19,7 @@ const Input = ({ label, value, handleChange }) => {
 Input.propTypes = {
 	label: PropTypes.string,
 	value: PropTypes.string,
-	handleChange: PropTypes.func
+	onChange: PropTypes.func
 }
 
 export default Input

@@ -5,27 +5,33 @@ import Button from '../../UI/button/Button'
 import * as Styled from './styledModal'
 import { useModal } from './useModal'
 
-const Modal = ({ unchangedValue, handleApplyChange, isActive, onActive }) => {
-	const { isDisable, newValue, onValue, isHide, hideModal, applyChange } =
-		useModal(unchangedValue, handleApplyChange, isActive, onActive)
+const Modal = ({ unchangedValue, isActive, onActive, onApply }) => {
+	const {
+		newValue,
+		isHide,
+		isDisable,
+		handleChangeValue,
+		handleHideModal,
+		handleSubmitValue
+	} = useModal(unchangedValue, isActive, onActive, onApply)
 
 	return (
-		<Styled.ModalWrapper onClick={hideModal} hide={isHide}>
+		<Styled.ModalWrapper onClick={handleHideModal} isHide={isHide}>
 			<Styled.ModalContent onClick={(e) => e.stopPropagation()}>
-				<Styled.ModalButtonClose onClick={hideModal} />
+				<Styled.ModalButtonClose onClick={handleHideModal} />
 				<Styled.ModalTitle>Task change</Styled.ModalTitle>
-				<Styled.ModalForm onSubmit={applyChange}>
+				<Styled.ModalForm onSubmit={handleSubmitValue}>
 					<Styled.ModalInputWrapper>
 						<Input
 							label={'Change todo...'}
 							value={newValue}
-							handleChange={onValue}
+							onChange={handleChangeValue}
 						/>
 					</Styled.ModalInputWrapper>
 					<Styled.ModalButtonWrapper>
 						<Button
-							type={'submit'}
 							content={'Apply'}
+							type={'submit'}
 							isFocused={true}
 							isDisable={isDisable}
 						/>
@@ -38,9 +44,9 @@ const Modal = ({ unchangedValue, handleApplyChange, isActive, onActive }) => {
 
 Modal.propTypes = {
 	unchangedValue: PropTypes.string,
-	handleApplyChange: PropTypes.func,
 	isActive: PropTypes.bool.isRequired,
-	onActive: PropTypes.func.isRequired
+	onActive: PropTypes.func.isRequired,
+	onApply: PropTypes.func
 }
 
 export default Modal

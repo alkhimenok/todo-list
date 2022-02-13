@@ -11,10 +11,10 @@ const Main = () => {
 	return (
 		<Styled.MainSection>
 			<Container>
-				<Form handleSubmit={addToList} />
+				<Form onAddTodo={addToList} />
 			</Container>
 			<Container isList={true}>
-				<List todoList={list} handleChange={replaceList} />
+				<List list={list} onReplaceList={replaceList} />
 			</Container>
 		</Styled.MainSection>
 	)

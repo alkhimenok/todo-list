@@ -3,17 +3,17 @@ import { useState } from 'react'
 export const useHovered = () => {
 	const [isHovered, setHovered] = useState(false)
 
-	const onMouseOver = () => {
+	const handleMouseOver = () => {
 		setHovered(true)
 	}
 
-	const onMouseOut = () => {
+	const handleMouseOut = () => {
 		setHovered(false)
 	}
 
 	return {
 		isHovered,
-		onMouseOver,
-		onMouseOut
+		handleMouseOver,
+		handleMouseOut
 	}
 }

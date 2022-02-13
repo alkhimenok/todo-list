@@ -5,34 +5,39 @@ import Modal from './modal/Modal'
 import * as Styled from './styledList'
 import { useAction } from './useAction'
 
-const List = ({ todoList, handleChange }) => {
-	const { actionTodo, unchangedValue, onEditTodo, active, setActive } =
-		useAction(todoList, handleChange)
+const List = ({ list, onReplaceList }) => {
+	const {
+		unchangedValue,
+		isActive,
+		handleActionTodo,
+		handleActive,
+		handleApply
+	} = useAction(list, onReplaceList)
 
 	return (
 		<Styled.ListWrapper>
-			{todoList.map(({ id, title, isCompleted }) => (
+			{list.map(({ id, title, isCompleted }) => (
 				<Todo
 					id={id}
 					key={id}
 					title={title}
 					isCompleted={isCompleted}
-					handleClick={actionTodo}
+					onClick={handleActionTodo}
 				/>
 			))}
 			<Modal
 				unchangedValue={unchangedValue}
-				handleApplyChange={onEditTodo}
-				isActive={active}
-				onActive={setActive}
+				isActive={isActive}
+				onActive={handleActive}
+				onApply={handleApply}
 			/>
 		</Styled.ListWrapper>
 	)
 }
 
 List.propTypes = {
-	todoList: PropTypes.array,
-	handleChange: PropTypes.func
+	list: PropTypes.array,
+	onReplaceList: PropTypes.func
 }
 
 export default List

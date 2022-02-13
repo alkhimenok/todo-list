@@ -5,11 +5,11 @@ export const useSubmit = (handleSubmit) => {
 
 	const isInputEmpty = !value.length
 
-	const changeValue = (e) => {
+	const handleChangeValue = (e) => {
 		setValue(e.target.value)
 	}
 
-	const submitForm = (e) => {
+	const handleAddTodo = (e) => {
 		if (value.trim()) {
 			handleSubmit(value)
 			setValue('')
@@ -21,7 +21,7 @@ export const useSubmit = (handleSubmit) => {
 	return {
 		value,
 		isInputEmpty,
-		changeValue,
-		submitForm
+		handleChangeValue,
+		handleAddTodo
 	}
 }

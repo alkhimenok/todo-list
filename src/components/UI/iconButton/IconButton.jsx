@@ -5,10 +5,10 @@ import * as Styled from './styledIconButton'
 const IconButton = ({ icon, size, isDisable, action }) => {
 	return (
 		<Styled.IconButtonWrapper
-			data-action={action}
 			icon={icon}
 			size={size}
 			isDisable={isDisable}
+			data-action={action}
 		>
 			<Styled.IconButtonPicture className={`icon-${icon}`} />
 		</Styled.IconButtonWrapper>

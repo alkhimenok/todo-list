@@ -1,40 +1,34 @@
 import { useState } from 'react'
 
-export const useModal = (
-	unchangedValue,
-	handleApplyChange,
-	isActive,
-	onActive
-) => {
+export const useModal = (unchangedValue, isActive, onActive, onApply) => {
 	const [newValue, setNewValue] = useState(unchangedValue)
 
+	const isHide = !isActive
 	const isDisable = !newValue.length
 
-	const onValue = (e) => {
+	const handleChangeValue = (e) => {
 		setNewValue(e.target.value)
 	}
 
-	const isHide = !isActive
-
-	const hideModal = () => {
+	const handleHideModal = () => {
 		onActive(false)
 
 		setNewValue('')
 	}
 
-	const applyChange = (e) => {
-		handleApplyChange(newValue)
-		hideModal()
+	const handleSubmitValue = (e) => {
+		onApply(newValue)
+		handleHideModal()
 
 		e.preventDefault()
 	}
 
 	return {
-		isDisable,
 		newValue,
-		onValue,
 		isHide,
-		hideModal,
-		applyChange
+		isDisable,
+		handleChangeValue,
+		handleHideModal,
+		handleSubmitValue
 	}
 }
