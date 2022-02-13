@@ -72,7 +72,7 @@
 		"no-extra-label": "error",
 		"no-fallthrough": "error",
 		"no-floating-decimal": "error",
-		"no-implicit-coercion": "error",
+		"no-implicit-coercion": "off",
 		"no-implicit-globals": "error",
 		"no-implied-eval": "error",
 		"no-invalid-this": "off", //
@@ -121,7 +121,7 @@
 		"no-undef-init": "error",
 		"no-undefined": "error",
 		"no-unused-vars": "warn",
-		"no-use-before-define": "error",
+		"no-use-before-define": "off",
 		"callback-return": "error",
 		"global-require": "warn",
 		"handle-callback-err": "error",

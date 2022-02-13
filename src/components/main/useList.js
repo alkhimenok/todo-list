@@ -4,9 +4,9 @@ import { uid } from 'uid'
 export const useList = () => {
 	const [list, setList] = useState([])
 
-	const addToList = (content) => {
+	const addToList = (title) => {
 		setList((prev) => {
-			const newItem = { id: uid(), content, isCompleted: false }
+			const newItem = { id: uid(), title, isCompleted: false }
 
 			return [newItem, ...prev]
 		})

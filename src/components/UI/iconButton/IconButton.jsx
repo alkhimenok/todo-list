@@ -19,6 +19,7 @@ IconButton.propTypes = {
 	icon: PropTypes.string.isRequired,
 	size: PropTypes.string,
 	isDisable: PropTypes.bool,
+	handleClick: PropTypes.func,
 	action: PropTypes.string
 }
 

@@ -38,6 +38,9 @@ const ButtonWrapper = styled.button`
       `}
 	${({ isHide }) =>
 		isHide && `opacity: ${TRANSPARENCY.INVISIBLE}; pointer-events: none;`}
+	${({ isDisable }) =>
+		isDisable &&
+		`user-select: none; pointer-events: none; opacity: ${TRANSPARENCY.HALF};`}
 `
 
 export { ButtonWrapper }

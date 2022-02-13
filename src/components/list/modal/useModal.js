@@ -1,27 +1,40 @@
-import { useMemo, useState } from 'react'
+import { useState } from 'react'
 
 export const useModal = (
 	unchangedValue,
 	handleApplyChange,
-	active,
-	setActive
+	isActive,
+	onActive
 ) => {
-	const [value, setValue] = useState(unchangedValue)
+	const [newValue, setNewValue] = useState(unchangedValue)
+
+	const isDisable = !newValue.length
+
+	const onValue = (e) => {
+		setNewValue(e.target.value)
+	}
+
+	const isHide = !isActive
+
+	const hideModal = () => {
+		onActive(false)
+
+		setNewValue('')
+	}
+
+	const applyChange = (e) => {
+		handleApplyChange(newValue)
+		hideModal()
+
+		e.preventDefault()
+	}
 
 	return {
-		value,
-		setValue: (e) => setValue(e.target.value),
-		isHide: !active,
-		hideModal: () => {
-			setActive(false)
-			setValue('')
-		},
-		applyChange: (e) => {
-			e.preventDefault()
-
-			handleApplyChange(value)
-			setActive(false)
-			setValue('')
-		}
+		isDisable,
+		newValue,
+		onValue,
+		isHide,
+		hideModal,
+		applyChange
 	}
 }

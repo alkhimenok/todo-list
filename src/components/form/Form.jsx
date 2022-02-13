@@ -19,7 +19,7 @@ const Form = ({ handleSubmit }) => {
 				/>
 			</Styled.FormInputWrapper>
 			<Styled.FormButtonWrapper isHide={isInputEmpty}>
-				<Button type='submit' content={'Submit'} isFocused={true} />
+				<Button type={'submit'} content={'Submit'} isFocused={true} />
 			</Styled.FormButtonWrapper>
 		</Styled.FormWrapper>
 	)
