@@ -9,6 +9,7 @@ const TodoWrapper = styled.li`
 	${getDisplayFlex('center', 'space-between')};
 	cursor: pointer;
 	padding: 0 ${UNITS.LG_SIZE} 0 0;
+	transition: ${TRANSITIONS.SHORT};
 `
 const TodoDrag = styled.div`
 	transition: ${TRANSITIONS.SHORT};
@@ -21,6 +22,7 @@ const TodoContent = styled.h2`
 	flex: 1;
 	padding: 0 ${UNITS.XS_SIZE};
 	font-size: ${UNITS.MD_SIZE};
+	word-break: break-all;
 	${({ isDisable }) => isDisable && `opacity: ${TRANSPARENCY.HALF};`}
 	transition: ${TRANSITIONS.SHORT};
 `

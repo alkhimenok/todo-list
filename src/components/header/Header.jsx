@@ -1,7 +1,7 @@
 import React from 'react'
+import Container from '../common/Container'
 import * as Styled from './styledHeader'
 import logo from '../../assets/images/logo.svg'
-import Container from '../common/Container'
 
 const Header = () => {
 	return (

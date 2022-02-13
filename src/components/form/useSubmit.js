@@ -3,23 +3,25 @@ import { useState } from 'react'
 export const useSubmit = (handleSubmit) => {
 	const [value, setValue] = useState('')
 
-	const submitForm = (e) => {
-		handleSubmit(value)
-		setValue('')
-
-		e.preventDefault()
-	}
+	const isInputEmpty = !value.length
 
 	const changeValue = (e) => {
 		setValue(e.target.value)
 	}
 
-	const isInputEmpty = !value.length
+	const submitForm = (e) => {
+		if (value.trim()) {
+			handleSubmit(value)
+			setValue('')
+		}
+
+		e.preventDefault()
+	}
 
 	return {
-		submitForm,
 		value,
+		isInputEmpty,
 		changeValue,
-		isInputEmpty
+		submitForm
 	}
 }

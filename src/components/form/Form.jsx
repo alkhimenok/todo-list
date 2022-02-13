@@ -1,25 +1,24 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import Input from '../UI/input/Input'
 import Button from '../UI/button/Button'
 import * as Styled from './styledForm'
 import { useSubmit } from './useSubmit'
 
 const Form = ({ handleSubmit }) => {
-	const { submitForm, value, changeValue, isInputEmpty } =
+	const { value, isInputEmpty, changeValue, submitForm } =
 		useSubmit(handleSubmit)
 
 	return (
 		<Styled.FormWrapper onSubmit={submitForm}>
-			<Styled.FormFieldset>
-				<Styled.FormInput
-					type='text'
-					placeholder=' '
+			<Styled.FormInputWrapper>
+				<Input
+					label={'Add new todo...'}
 					value={value}
-					onChange={changeValue}
+					handleChange={changeValue}
 				/>
-				<Styled.FormLabel>Add new todo...</Styled.FormLabel>
-			</Styled.FormFieldset>
-			<Styled.FormButtonWrapper hide={isInputEmpty}>
+			</Styled.FormInputWrapper>
+			<Styled.FormButtonWrapper isHide={isInputEmpty}>
 				<Button type='submit' content={'Submit'} isFocused={true} />
 			</Styled.FormButtonWrapper>
 		</Styled.FormWrapper>

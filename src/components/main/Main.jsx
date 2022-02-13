@@ -1,31 +1,20 @@
-import React, { useState } from 'react'
+import React from 'react'
 import Container from '../common/Container'
 import Form from '../form/Form'
 import List from '../list/List'
 import * as Styled from './styledMain'
-import * as UNITS from '../../constants/units'
-import { uid } from 'uid'
+import { useList } from './useList'
 
 const Main = () => {
-	const [todoList, setTodoList] = useState([])
-
-	const addTodo = (content) => {
-		setTodoList((prev) => {
-			const newTodo = { id: uid(), content, isCompleted: false }
-
-			return [newTodo, ...prev]
-		})
-	}
+	const { list, addToList, replaceList } = useList()
 
 	return (
 		<Styled.MainSection>
 			<Container>
-				<Form handleSubmit={addTodo} />
+				<Form handleSubmit={addToList} />
 			</Container>
-			<Container
-				width={`calc(${UNITS.CONTAINER_WIDTH} + ${UNITS.XL_SIZE} * 2 + ${UNITS.LG_SIZE} * 2)`}
-			>
-				<List todoList={todoList} />
+			<Container isList={true}>
+				<List todoList={list} handleChange={replaceList} />
 			</Container>
 		</Styled.MainSection>
 	)

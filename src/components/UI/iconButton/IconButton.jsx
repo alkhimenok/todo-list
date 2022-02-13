@@ -2,9 +2,14 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import * as Styled from './styledIconButton'
 
-const IconButton = ({ icon, size, isDisable }) => {
+const IconButton = ({ icon, size, isDisable, action }) => {
 	return (
-		<Styled.IconButtonWrapper icon={icon} size={size} isDisable={isDisable}>
+		<Styled.IconButtonWrapper
+			data-action={action}
+			icon={icon}
+			size={size}
+			isDisable={isDisable}
+		>
 			<Styled.IconButtonPicture className={`icon-${icon}`} />
 		</Styled.IconButtonWrapper>
 	)
@@ -13,7 +18,8 @@ const IconButton = ({ icon, size, isDisable }) => {
 IconButton.propTypes = {
 	icon: PropTypes.string.isRequired,
 	size: PropTypes.string,
-	isDisable: PropTypes.bool
+	isDisable: PropTypes.bool,
+	action: PropTypes.string
 }
 
 export default IconButton

@@ -3,34 +3,36 @@ import PropTypes from 'prop-types'
 import Checkbox from '../UI/checkbox/Checkbox'
 import IconButton from '../UI/iconButton/IconButton'
 import * as Styled from './styledTodo'
-import { useTodo } from './useTodo'
+import { useHovered } from './useHovered'
 
-const Todo = ({ content, isCompleted = false }) => {
-	const { handleMouseOver, handleMouseOut, handleClick, completed, hovered } =
-		useTodo(isCompleted)
+const Todo = ({ id, content, isCompleted, handleClick }) => {
+	const { handleMouseOver, handleMouseOut, isHovered } = useHovered()
 
 	return (
 		<Styled.TodoWrapper
+			id={id}
 			onMouseOver={handleMouseOver}
 			onMouseOut={handleMouseOut}
 			onClick={handleClick}
 		>
-			<Styled.TodoDrag isHovered={hovered}>
-				<IconButton icon={'drag'} isDisable={completed} />
+			<Styled.TodoDrag isHovered={isHovered}>
+				<IconButton icon={'drag'} isDisable={isCompleted} />
 			</Styled.TodoDrag>
-			<Checkbox isChecked={completed} />
-			<Styled.TodoContent isDisable={completed}>{content}</Styled.TodoContent>
+			<Checkbox isChecked={isCompleted} />
+			<Styled.TodoContent isDisable={isCompleted}>{content}</Styled.TodoContent>
 			<Styled.TodoForm>
-				<IconButton icon={'pencil'} isDisable={completed} />
-				<IconButton icon={'bin'} isDisable={completed} />
+				<IconButton icon={'pencil'} isDisable={isCompleted} action={'change'} />
+				<IconButton icon={'bin'} isDisable={isCompleted} action={'delete'} />
 			</Styled.TodoForm>
 		</Styled.TodoWrapper>
 	)
 }
 
 Todo.propTypes = {
+	id: PropTypes.string.isRequired,
 	content: PropTypes.string.isRequired,
-	isCompleted: PropTypes.bool
+	isCompleted: PropTypes.bool.isRequired,
+	handleClick: PropTypes.func
 }
 
 export default Todo
