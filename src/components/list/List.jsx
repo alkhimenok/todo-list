@@ -1,18 +1,18 @@
 import React from 'react'
-import PropTypes from 'prop-types'
-import Todo from '../todo/Todo'
+import Todo from '@components/todo/Todo'
 import Modal from './modal/Modal'
 import * as Styled from './styledList'
-import { useAction } from './useAction'
+import { useList } from './useList'
 
-const List = ({ list, onReplaceList }) => {
+const List = () => {
 	const {
+		list,
 		unchangedValue,
 		isActive,
-		handleActionTodo,
+		handleClick,
 		handleActive,
 		handleApply
-	} = useAction(list, onReplaceList)
+	} = useList()
 
 	return (
 		<Styled.ListWrapper>
@@ -23,22 +23,17 @@ const List = ({ list, onReplaceList }) => {
 					title={title}
 					isCompleted={isCompleted}
 					isHide={isHide}
-					onClick={handleActionTodo}
+					onClick={handleClick}
 				/>
 			))}
 			<Modal
 				unchangedValue={unchangedValue}
 				isActive={isActive}
 				onActive={handleActive}
-				onApply={handleApply}
+				onSubmit={handleApply}
 			/>
 		</Styled.ListWrapper>
 	)
-}
-
-List.propTypes = {
-	list: PropTypes.array,
-	onReplaceList: PropTypes.func
 }
 
 export default List

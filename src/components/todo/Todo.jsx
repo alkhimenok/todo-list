@@ -1,10 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import Checkbox from '../UI/checkbox/Checkbox'
-import IconButton from '../UI/iconButton/IconButton'
+import Checkbox from '@components/UI/checkbox/Checkbox'
+import IconButton from '@components/UI/iconButton/IconButton'
 import * as Styled from './styledTodo'
 import { useHovered } from './useHovered'
-import { compressElement } from '../../utils/animation'
 
 const Todo = ({ id, title, isCompleted, isHide, onClick }) => {
 	const { isHovered, handleMouseOver, handleMouseOut } = useHovered()
@@ -18,7 +17,7 @@ const Todo = ({ id, title, isCompleted, isHide, onClick }) => {
 			onClick={onClick}
 		>
 			<Styled.TodoDrag isHovered={isHovered}>
-				<IconButton icon={'drag'} isDisable={isCompleted} />
+				<IconButton icon={'drag'} isDisable={isCompleted} action={'drag'} />
 			</Styled.TodoDrag>
 			<Checkbox isChecked={isCompleted} />
 			<Styled.TodoContent isDisable={isCompleted}>{title}</Styled.TodoContent>

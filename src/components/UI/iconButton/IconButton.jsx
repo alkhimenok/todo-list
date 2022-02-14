@@ -2,13 +2,13 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import * as Styled from './styledIconButton'
 
-const IconButton = ({ id, icon, size, isDisable, action }) => {
+const IconButton = ({ id, icon, isDisable, size, action }) => {
 	return (
 		<Styled.IconButtonWrapper
 			id={id}
 			icon={icon}
-			size={size}
 			isDisable={isDisable}
+			size={size}
 			data-action={action}
 		>
 			<Styled.IconButtonPicture className={`icon-${icon}`} />

@@ -1,18 +1,15 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import App from './App'
-// import { createStore } from 'redux'
+import { createStore } from 'redux'
+import { Provider } from 'react-redux'
+import App from '@src/App'
+import { reducer } from '@redux/reducer'
 
-// const reducer = (state, action) => {
-// 	switch (action.type) {
-// 		case '':
-// 			return ''
+const store = createStore(reducer)
 
-// 		default:
-// 			return state
-// 	}
-// }
-
-// const store = createStore()
-
-ReactDOM.render(<App />, document.getElementById('root'))
+ReactDOM.render(
+	<Provider store={store}>
+		<App />
+	</Provider>,
+	document.getElementById('root')
+)

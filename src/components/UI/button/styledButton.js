@@ -7,9 +7,9 @@ import * as TRANSITIONS from '../../../constants/transitions'
 import * as TRANSPARENCY from '../../../constants/transparency'
 
 const ButtonWrapper = styled.button`
-	padding: ${UNITS.XS_SIZE} ${UNITS.MD_SIZE};
+	padding: ${UNITS.SM_SIZE};
 	font-family: ${FONTS.SECONDARY};
-	font-size: ${UNITS.MD_SIZE};
+	font-size: ${UNITS.SM_SIZE};
 	border: ${BORDERS.THIN} transparent;
 	border-radius: ${BORDERS.RADIUS_SUPERELLIPSE};
 	transition: all ${TRANSITIONS.SHORT};
@@ -40,7 +40,7 @@ const ButtonWrapper = styled.button`
 		isHide && `opacity: ${TRANSPARENCY.INVISIBLE}; pointer-events: none;`}
 	${({ isDisable }) =>
 		isDisable &&
-		`user-select: none; pointer-events: none; opacity: ${TRANSPARENCY.HALF};`}
+		`opacity: ${TRANSPARENCY.HALF}; user-select: none; pointer-events: none;`}
 `
 
 export { ButtonWrapper }

@@ -1,10 +1,10 @@
 import styled, { createGlobalStyle } from 'styled-components'
-import { getDisplayFlex, forChildren } from './utils/styled'
-import * as UNITS from './constants/units'
-import * as FONTS from './constants/fonts'
-import * as COLORS from './constants/colors'
-import * as BORDERS from './constants/borders'
-import * as BREAKPOINTS from './constants/breakpoints'
+import * as UNITS from '@constants/units'
+import * as FONTS from '@constants/fonts'
+import * as COLORS from '@constants/colors'
+import * as BORDERS from '@constants/borders'
+import * as BREAKPOINTS from '@constants/breakpoints'
+import { getDisplayFlex, forChildren } from '@utils/styled'
 
 const Reset = createGlobalStyle`
   ${require('reset-css')};
@@ -47,21 +47,21 @@ const Reset = createGlobalStyle`
 const Fonts = createGlobalStyle`
   @font-face {
     font-family: 'interRegular';
-    src: url(${require('./assets/fonts/Inter-Regular.ttf')});
+    src: url(${require('@assets/fonts/Inter-Regular.ttf')});
   }
   @font-face {
     font-family: 'interSemiBold';
-    src: url(${require('./assets/fonts/Inter-SemiBold.ttf')});
+    src: url(${require('@assets/fonts/Inter-SemiBold.ttf')});
   }
   @font-face {
     font-family: 'interBold';
-    src: url(${require('./assets/fonts/Inter-Bold.ttf')});
+    src: url(${require('@assets/fonts/Inter-Bold.ttf')});
   }
 `
 const Icons = createGlobalStyle`
   @font-face {
     font-family: 'icons';
-    src:  url(${require('./assets/icons/icons.ttf')});
+    src:  url(${require('@assets/icons/icons.ttf')});
     /* src:  url('./assets/icons/icons.eot?mbjhc7');
     src:  url('./assets/icons/icons.eot?mbjhc7#iefix') format('embedded-opentype'),
       url('./assets/icons/icons.ttf?mbjhc7') format('truetype'),
@@ -81,6 +81,9 @@ const Icons = createGlobalStyle`
     line-height: 1;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+  }
+  .icon-mark:before {
+  content: "\\e903";
   }
   .icon-bin:before {
     content: "\\e900";

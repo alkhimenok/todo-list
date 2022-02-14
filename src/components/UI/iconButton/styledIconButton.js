@@ -5,15 +5,15 @@ import * as TRANSPARENCY from '../../../constants/transparency'
 import * as TRANSITIONS from '../../../constants/transitions'
 
 const onHover = {
-	drag: `color: ${COLORS.WARNING}; cursor: ns-resize;`,
-	pencil: `color: ${COLORS.WARNING};`,
+	drag: `color: ${COLORS.TRANSPARENCY_SECONDARY}; cursor: ns-resize;`,
+	pencil: `color: ${COLORS.TRANSPARENCY_SECONDARY};`,
 	bin: `color: ${COLORS.DANGER};`
 }
 
 const IconButtonWrapper = styled.button`
 	padding: ${UNITS.XS_SIZE};
-	font-size: ${({ size }) => size || UNITS.MD_SIZE};
-	color: ${COLORS.PRIMARY_DARK};
+	font-size: ${({ size }) => size || UNITS.SM_SIZE};
+	color: ${COLORS.TRANSPARENCY_PRIMARY};
 	background-color: transparent;
 	border: none;
 	transition: all ${TRANSITIONS.SHORT};
@@ -24,7 +24,7 @@ const IconButtonWrapper = styled.button`
 		}
 	}
 	&:active {
-		opacity: ${TRANSPARENCY.WEAK};
+		opacity: ${TRANSPARENCY.HALF};
 	}
 	${({ isDisable }) =>
 		isDisable && `opacity: ${TRANSPARENCY.HALF}; pointer-events: none`}

@@ -12,7 +12,7 @@ const InputWrapper = styled.input`
 	width: 100%;
 	font-size: ${UNITS.MD_SIZE};
 	padding: ${UNITS.XS_SIZE};
-	border: ${BORDERS.THIN} ${COLORS.SECONDARY};
+	border: ${BORDERS.THIN} ${COLORS.TRANSPARENCY_SECONDARY};
 	border-radius: ${BORDERS.RADIUS_SUPERELLIPSE};
 	transition: all ${TRANSITIONS.SHORT};
 	&:focus {
@@ -32,7 +32,7 @@ const InputLabel = styled.label`
 	left: ${UNITS.XS_SIZE};
 	transform: translate(0, -50%);
 	font-size: ${UNITS.MD_SIZE};
-	color: ${COLORS.SECONDARY};
+	color: ${COLORS.TRANSPARENCY_SECONDARY};
 	user-select: none;
 	pointer-events: none;
 	transition: all ${TRANSITIONS.SHORT};

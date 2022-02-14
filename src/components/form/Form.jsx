@@ -1,32 +1,26 @@
 import React from 'react'
-import PropTypes from 'prop-types'
-import Input from '../UI/input/Input'
-import Button from '../UI/button/Button'
+import Input from '@components/UI/input/Input'
+import Button from '@components/UI/button/Button'
 import * as Styled from './styledForm'
-import { useSubmit } from './useSubmit'
+import { useForm } from './useForm'
 
-const Form = ({ onAddTodo }) => {
-	const { value, isInputEmpty, handleChangeValue, handleAddTodo } =
-		useSubmit(onAddTodo)
+const Form = () => {
+	const { value, isHide, handleChange, handleSubmit } = useForm()
 
 	return (
-		<Styled.FormWrapper onSubmit={handleAddTodo}>
+		<Styled.FormWrapper onSubmit={handleSubmit}>
 			<Styled.FormInputWrapper>
 				<Input
 					label={'Add new todo...'}
 					value={value}
-					onChange={handleChangeValue}
+					onChange={handleChange}
 				/>
 			</Styled.FormInputWrapper>
-			<Styled.FormButtonWrapper isHide={isInputEmpty}>
+			<Styled.FormButtonWrapper isHide={isHide}>
 				<Button content={'Submit'} type={'submit'} isFocused={true} />
 			</Styled.FormButtonWrapper>
 		</Styled.FormWrapper>
 	)
-}
-
-Form.propTypes = {
-	onAddTodo: PropTypes.func.isRequired
 }
 
 export default Form

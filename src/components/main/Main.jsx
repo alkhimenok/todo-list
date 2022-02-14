@@ -1,33 +1,24 @@
 import React from 'react'
-import PropTypes from 'prop-types'
-import Container from '../common/Container'
-import Form from '../form/Form'
-import List from '../list/List'
+import Container from '@components/common/Container'
+import Form from '@components/form/Form'
+import List from '@components/list/List'
 import * as Styled from './styledMain'
-import { useList } from './useList'
 
-const Main = ({ list, onAction }) => {
-	const { addToList, replaceList } = useList(list, onAction)
-
+const Main = () => {
 	return (
 		<Styled.MainSection>
 			<Styled.MainFormWrapper>
 				<Container>
-					<Form onAddTodo={addToList} />
+					<Form />
 				</Container>
 			</Styled.MainFormWrapper>
 			<Styled.MainListWrapper>
 				<Container isList={true}>
-					<List list={list} onReplaceList={replaceList} />
+					<List />
 				</Container>
 			</Styled.MainListWrapper>
 		</Styled.MainSection>
 	)
-}
-
-Main.propTypes = {
-	list: PropTypes.array,
-	onAction: PropTypes.func
 }
 
 export default Main
