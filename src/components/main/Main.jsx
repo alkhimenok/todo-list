@@ -10,12 +10,16 @@ const Main = () => {
 
 	return (
 		<Styled.MainSection>
-			<Container>
-				<Form onAddTodo={addToList} />
-			</Container>
-			<Container isList={true}>
-				<List list={list} onReplaceList={replaceList} />
-			</Container>
+			<Styled.MainFormWrapper>
+				<Container>
+					<Form onAddTodo={addToList} />
+				</Container>
+			</Styled.MainFormWrapper>
+			<Styled.MainListWrapper>
+				<Container isList={true}>
+					<List list={list} onReplaceList={replaceList} />
+				</Container>
+			</Styled.MainListWrapper>
 		</Styled.MainSection>
 	)
 }

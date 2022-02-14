@@ -5,8 +5,7 @@ import * as TRANSITIONS from '../../constants/transitions'
 import { getDisplayFlex } from '../../utils/styled'
 
 const FormWrapper = styled.form`
-	${getDisplayFlex()}
-	padding: ${UNITS.XXL_SIZE} 0;
+	${getDisplayFlex()}/* padding: ${UNITS.XXL_SIZE} 0; */
 `
 const FormInputWrapper = styled.div`
 	flex: 0 1 320px;
