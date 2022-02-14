@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import Container from '../common/Container'
 import Card from './card/Card'
 import Button from '../UI/button/Button'
@@ -6,8 +7,16 @@ import * as Styled from './styledFooter'
 import * as COLORS from '../../constants/colors'
 import { uid } from 'uid'
 
-const Footer = () => {
-	const buttons = ['Check all', 'All', 'Active', 'Completed', 'Clear completed']
+const Footer = ({ progress, buttons, onClick }) => {
+	const { thereTask, numberOfTask, totalTasks } = progress
+
+	if (!thereTask) {
+		return (
+			<Styled.FooterTitle>
+				Congrat, you have no more tasks to do
+			</Styled.FooterTitle>
+		)
+	}
 
 	return (
 		<Styled.FooterSection>
@@ -16,31 +25,31 @@ const Footer = () => {
 					<Styled.FooterCardWrapper>
 						<Card
 							title={'Completed'}
-							numberOfTask={1}
-							totalTasks={10}
+							numberOfTask={numberOfTask}
+							totalTasks={totalTasks}
 							color={COLORS.SECONDARY_DARK}
 						/>
 					</Styled.FooterCardWrapper>
 					<Styled.FooterCardWrapper>
 						<Card
 							title={'To be finished'}
-							numberOfTask={1}
-							totalTasks={10}
+							numberOfTask={totalTasks - numberOfTask}
+							totalTasks={totalTasks}
 							color={COLORS.TERTIARY_DARK}
 						/>
 					</Styled.FooterCardWrapper>
 				</Styled.FooterProgress>
 				<Styled.FooterNav>
-					<Styled.FooterList>
-						{buttons.map((btn) => (
+					<Styled.FooterList onClick={onClick}>
+						{buttons.map(({ id, content, isFocused, isHide, isDisable }) => (
 							<Styled.FooterItem key={uid()}>
 								<Button
-									id={uid()}
-									content={btn}
+									id={id}
+									content={content}
 									type={'button'}
-									isFocused={false}
-									isHide={false}
-									isDisable={false}
+									isFocused={isFocused}
+									isHide={isHide}
+									isDisable={isDisable}
 								/>
 							</Styled.FooterItem>
 						))}
@@ -49,6 +58,12 @@ const Footer = () => {
 			</Container>
 		</Styled.FooterSection>
 	)
+}
+
+Footer.propTypes = {
+	progress: PropTypes.object,
+	buttons: PropTypes.array,
+	onClick: PropTypes.func
 }
 
 export default Footer

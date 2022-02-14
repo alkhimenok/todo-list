@@ -1,11 +1,9 @@
-import { useState } from 'react'
+// import { useState } from 'react'
 import { uid } from 'uid'
 
-export const useList = () => {
-	const [list, setList] = useState([])
-
+export const useList = (list, onAction) => {
 	const addToList = (title) => {
-		const newItem = { id: uid(), title, isCompleted: false }
+		const newItem = { id: uid(), title, isCompleted: false, isHide: false }
 		const newList = [newItem, ...list]
 
 		setNewList(newList)
@@ -16,7 +14,9 @@ export const useList = () => {
 	}
 
 	const setNewList = (newList) => {
-		setList(newList)
+		// setList(newList)
+
+		onAction(newList)
 	}
 
 	return { list, addToList, replaceList }

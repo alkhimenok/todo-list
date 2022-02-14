@@ -1,12 +1,13 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import Container from '../common/Container'
 import Form from '../form/Form'
 import List from '../list/List'
 import * as Styled from './styledMain'
 import { useList } from './useList'
 
-const Main = () => {
-	const { list, addToList, replaceList } = useList()
+const Main = ({ list, onAction }) => {
+	const { addToList, replaceList } = useList(list, onAction)
 
 	return (
 		<Styled.MainSection>
@@ -22,6 +23,11 @@ const Main = () => {
 			</Styled.MainListWrapper>
 		</Styled.MainSection>
 	)
+}
+
+Main.propTypes = {
+	list: PropTypes.array,
+	onAction: PropTypes.func
 }
 
 export default Main

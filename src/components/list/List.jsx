@@ -16,12 +16,13 @@ const List = ({ list, onReplaceList }) => {
 
 	return (
 		<Styled.ListWrapper>
-			{list.map(({ id, title, isCompleted }) => (
+			{list.map(({ id, title, isCompleted, isHide }) => (
 				<Todo
 					id={id}
 					key={id}
 					title={title}
 					isCompleted={isCompleted}
+					isHide={isHide}
 					onClick={handleActionTodo}
 				/>
 			))}

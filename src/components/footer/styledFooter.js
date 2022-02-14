@@ -1,7 +1,13 @@
 import styled from 'styled-components'
 import * as UNITS from '../../constants/units'
+import * as COLORS from '../../constants/colors'
 import { getDisplayFlex } from '../../utils/styled'
 
+const FooterTitle = styled.h3`
+	font-size: ${UNITS.MD_SIZE};
+	color: ${COLORS.SECONDARY};
+	text-align: center;
+`
 const FooterSection = styled.footer``
 const FooterProgress = styled.div`
 	${getDisplayFlex('center', 'space-between')}
@@ -17,6 +23,7 @@ const FooterList = styled.ul`
 const FooterItem = styled.li``
 
 export {
+	FooterTitle,
 	FooterSection,
 	FooterProgress,
 	FooterCardWrapper,
