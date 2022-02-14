@@ -2,10 +2,11 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import * as Styled from './styledInput'
 
-const Input = ({ label, value, onChange }) => {
+const Input = ({ id, label, value, onChange }) => {
 	return (
 		<Styled.InputFieldset>
 			<Styled.InputWrapper
+				id={id}
 				type='text'
 				placeholder=' '
 				value={value}
@@ -17,6 +18,7 @@ const Input = ({ label, value, onChange }) => {
 }
 
 Input.propTypes = {
+	id: PropTypes.string,
 	label: PropTypes.string,
 	value: PropTypes.string,
 	onChange: PropTypes.func

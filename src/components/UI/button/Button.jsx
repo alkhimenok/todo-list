@@ -2,9 +2,10 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { ButtonWrapper } from './styledButton'
 
-const Button = ({ content, type, isFocused, isHide, isDisable }) => {
+const Button = ({ id, content, type, isFocused, isHide, isDisable }) => {
 	return (
 		<ButtonWrapper
+			id={id}
 			type={type}
 			isFocused={isFocused}
 			isHide={isHide}
@@ -16,6 +17,7 @@ const Button = ({ content, type, isFocused, isHide, isDisable }) => {
 }
 
 Button.propTypes = {
+	id: PropTypes.string,
 	content: PropTypes.string.isRequired,
 	type: PropTypes.string,
 	isFocused: PropTypes.bool,

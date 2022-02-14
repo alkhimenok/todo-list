@@ -2,9 +2,10 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import * as Styled from './styledIconButton'
 
-const IconButton = ({ icon, size, isDisable, action }) => {
+const IconButton = ({ id, icon, size, isDisable, action }) => {
 	return (
 		<Styled.IconButtonWrapper
+			id={id}
 			icon={icon}
 			size={size}
 			isDisable={isDisable}
@@ -16,6 +17,7 @@ const IconButton = ({ icon, size, isDisable, action }) => {
 }
 
 IconButton.propTypes = {
+	id: PropTypes.string,
 	icon: PropTypes.string.isRequired,
 	size: PropTypes.string,
 	isDisable: PropTypes.bool,

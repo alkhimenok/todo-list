@@ -2,9 +2,9 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import * as Styled from './styledCheckbox'
 
-const Checkbox = ({ isChecked, size }) => {
+const Checkbox = ({ id, isChecked, size }) => {
 	return (
-		<Styled.CheckboxWrapper size={size}>
+		<Styled.CheckboxWrapper id={id} size={size}>
 			<Styled.CheckboxLabel isChecked={isChecked}>
 				<Styled.CheckboxInput type='checkbox' />
 			</Styled.CheckboxLabel>
@@ -13,6 +13,7 @@ const Checkbox = ({ isChecked, size }) => {
 }
 
 Checkbox.propTypes = {
+	id: PropTypes.string,
 	isChecked: PropTypes.bool,
 	size: PropTypes.string
 }

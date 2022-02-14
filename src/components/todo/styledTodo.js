@@ -18,7 +18,7 @@ const TodoDrag = styled.div`
 			isHovered || `opacity: ${TRANSPARENCY.INVISIBLE}; pointer-events: none;`};
 	}
 `
-const TodoContent = styled.h2`
+const TodoContent = styled.h3`
 	flex: 1;
 	padding: 0 ${UNITS.XS_SIZE};
 	font-size: ${UNITS.MD_SIZE};
