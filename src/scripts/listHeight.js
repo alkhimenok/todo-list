@@ -11,13 +11,13 @@ export const setListHeight = () => {
 	const intend =
 		(parseFloat(UNITS.XL_SIZE) * 2 + parseFloat(UNITS.LG_SIZE)) * baseSize
 
-	const mainHeigth =
+	const mainHeight =
 		$body.clientHeight -
 		$header.clientHeight -
 		$footer.clientHeight -
 		parseFloat(UNITS.XL_SIZE) * 2 * baseSize
 
-	$list.style.maxHeight = `${mainHeigth - $form.clientHeight - intend}px`
+	$list.style.maxHeight = `${mainHeight - $form.clientHeight - intend}px`
 
 	window.addEventListener('resize', setListHeight)
 } // fix

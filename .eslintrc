@@ -17,7 +17,7 @@
 		"worker": true
 	},
 	"rules": {
-		"indent": "off", //
+		"indent": "off",
 		"comma-dangle": "error",
 		"no-cond-assign": "error",
 		"no-console": "warn",
@@ -31,7 +31,7 @@
 		"no-empty-character-class": "error",
 		"no-ex-assign": "error",
 		"no-extra-boolean-cast": "error",
-		"no-extra-parens": "off", //
+		"no-extra-parens": "off",
 		"no-extra-semi": "error",
 		"no-func-assign": "error",
 		"no-inner-declarations": "error",
@@ -75,12 +75,12 @@
 		"no-implicit-coercion": "off",
 		"no-implicit-globals": "error",
 		"no-implied-eval": "error",
-		"no-invalid-this": "off", //
+		"no-invalid-this": "off",
 		"no-iterator": "error",
 		"no-labels": "error",
 		"no-lone-blocks": "error",
 		"no-loop-func": "error",
-		"no-magic-numbers": "off", //
+		"no-magic-numbers": "off",
 		"no-multi-spaces": "error",
 		"no-multi-str": "error",
 		"no-native-reassign": "error",
@@ -107,7 +107,7 @@
 		"no-void": "error",
 		"no-warning-comments": "error",
 		"no-with": "error",
-		"radix": ["error", "as-needed"], //
+		"radix": ["error", "as-needed"],
 		"vars-on-top": "error",
 		"wrap-iife": "error",
 		"yoda": "error",
@@ -147,7 +147,7 @@
 		"id-blacklist": "error",
 		"id-length": "off",
 		"id-match": "error",
-		"jsx-quotes": ["error", "prefer-single"], //
+		"jsx-quotes": ["error", "prefer-single"],
 		"key-spacing": "error",
 		"keyword-spacing": "error",
 		"linebreak-style": "error",
@@ -166,7 +166,7 @@
 				"ignoreTemplateLiterals": true,
 				"ignoreRegExpLiterals": true
 			}
-		], //
+		],
 		"max-nested-callbacks": "error",
 		"max-params": "off",
 		"max-statements": "off",
@@ -197,19 +197,19 @@
 			"error",
 			"always",
 			{ "arraysInObjects": false, "objectsInObjects": false }
-		], //
-		"one-var": ["error", "never"], //
+		],
+		"one-var": ["error", "never"],
 		"one-var-declaration-per-line": "error",
 		"operator-assignment": "error",
 		"operator-linebreak": "error",
 		"padded-blocks": [
 			"error",
 			{ "blocks": "never", "classes": "never", "switches": "never" }
-		], //
-		"quote-props": ["error", "as-needed"], //
-		"quotes": ["error", "single"], //
+		],
+		"quote-props": ["error", "as-needed"],
+		"quotes": ["error", "single"],
 		"require-jsdoc": "error",
-		"semi": ["error", "never"], //
+		"semi": ["error", "never"],
 		"semi-spacing": "error",
 		"sort-imports": [
 			"error",
@@ -220,7 +220,7 @@
 				"memberSyntaxSortOrder": ["none", "all", "multiple", "single"],
 				"allowSeparatedGroups": true
 			}
-		], //
+		],
 		"sort-vars": "error",
 		"space-before-blocks": "error",
 		"space-before-function-paren": "off",
@@ -229,8 +229,8 @@
 		"space-unary-ops": "error",
 		"spaced-comment": "error",
 		"wrap-regex": "error",
-		"no-tabs": ["warn", { "allowIndentationTabs": true }], //
-		"arrow-body-style": "off", //
+		"no-tabs": ["warn", { "allowIndentationTabs": true }],
+		"arrow-body-style": "off",
 		"arrow-parens": "error",
 		"arrow-spacing": "error",
 		"constructor-super": "error",
