@@ -10,7 +10,7 @@ const TodoWrapper = styled.li`
 	cursor: pointer;
 	padding: 0 ${UNITS.LG_SIZE} 0 0;
 	transition: ${TRANSITIONS.SHORT};
-	${({ isHide }) => isHide && 'display: none'}
+	${({ isHide }) => isHide && 'display: none;'}
 `
 const TodoDrag = styled.div`
 	transition: ${TRANSITIONS.SHORT};

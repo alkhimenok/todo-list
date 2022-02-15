@@ -3,6 +3,8 @@ import {
 	UNFOCUSED_BUTTON,
 	HIDE_BUTTON,
 	SHOW_BUTTON,
+	HIDE_EVERY_BUTTON,
+	SHOW_EVERY_BUTTON,
 	DISABLE_BUTTON,
 	UNABLE_BUTTON
 } from '@redux/types/button'
@@ -50,20 +52,22 @@ export const buttonList = (state = initialState, action) => {
 		case FOCUSED_BUTTON:
 			return [
 				...state.map((btn) => {
-					btn.id === action.payload.id ? (btn.isFocused = true) : null
+					btn.id === action.payload.id
+						? (btn.isFocused = true)
+						: (btn.isFocused = false)
 
 					return btn
 				})
 			]
 
-		case UNFOCUSED_BUTTON:
-			return [
-				...state.map((btn) => {
-					btn.id === action.payload.id ? (btn.isFocused = false) : null
+		// case UNFOCUSED_BUTTON:
+		// 	return [
+		// 		...state.map((btn) => {
+		// 			btn.id === action.payload.id ? (btn.isFocused = false) : null
 
-					return btn
-				})
-			]
+		// 			return btn
+		// 		})
+		// 	]
 
 		case HIDE_BUTTON:
 			return [
@@ -83,10 +87,28 @@ export const buttonList = (state = initialState, action) => {
 				})
 			]
 
+		case HIDE_EVERY_BUTTON:
+			return [
+				...state.map((btn) => {
+					btn.isHide = true
+
+					return btn
+				})
+			]
+
+		case SHOW_EVERY_BUTTON:
+			return [
+				...state.map((btn) => {
+					btn.isHide = false
+
+					return btn
+				})
+			]
+
 		case DISABLE_BUTTON:
 			return [
 				...state.map((btn) => {
-					btn.id === action.payload.id ? (btn.isDisable = true) : null
+					btn.isDisable = true
 
 					return btn
 				})

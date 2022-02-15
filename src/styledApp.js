@@ -114,9 +114,10 @@ const Content = styled.div`
 `
 const Body = styled.div`
 	padding: ${UNITS.XL_SIZE};
+	${getDisplayFlex('center', 'space-between', 'column')}
 	@media screen and (min-height: calc(${UNITS.MAX_HEIGHT} + ${parseFloat(
-			UNITS.XS_SIZE
-		)} * 20px)) {
+		UNITS.XS_SIZE
+	)} * 20px)) {
 		height: ${UNITS.MAX_HEIGHT};
 	}
 	@media screen and (max-height: calc(${UNITS.MAX_HEIGHT} + ${parseFloat(
@@ -124,6 +125,10 @@ const Body = styled.div`
 		)} * 20px - 1px)) {
 		height: calc(100vh - ${parseFloat(UNITS.XS_SIZE)} * 20px);
 		overflow: auto;
+	}
+	${forChildren('width: 100%')}
+	main {
+		flex: 1;
 	}
 `
 

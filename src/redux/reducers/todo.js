@@ -4,8 +4,10 @@ import {
 	HIDE_TODO,
 	SHOW_TODO,
 	CHECK_TODO,
-	CHANGE_TODO
-} from '@redux/types/list'
+	CHANGE_TODO,
+	COMPLETED_ALL_TODO,
+	UNCOMPLETED_ALL_TODO
+} from '@redux/types/todo'
 
 const initialState = localStorage.getItem('todoList') || []
 
@@ -60,6 +62,24 @@ export const todoList = (state = initialState, action) => {
 					todo.id === action.payload.id
 						? (todo.title = action.payload.title)
 						: null
+
+					return todo
+				})
+			]
+
+		case COMPLETED_ALL_TODO:
+			return [
+				...state.map((todo) => {
+					todo.isCompleted = true
+
+					return todo
+				})
+			]
+
+		case UNCOMPLETED_ALL_TODO:
+			return [
+				...state.map((todo) => {
+					todo.isCompleted = false
 
 					return todo
 				})
