@@ -45,7 +45,7 @@ const Reset = createGlobalStyle`
   }
 `
 const Fonts = createGlobalStyle`
-  @font-face {
+  /* @font-face {
     font-family: 'interRegular';
     src: url(${require('@assets/fonts/Inter-Regular.ttf')});
   }
@@ -56,17 +56,12 @@ const Fonts = createGlobalStyle`
   @font-face {
     font-family: 'interBold';
     src: url(${require('@assets/fonts/Inter-Bold.ttf')});
-  }
+  } */
 `
 const Icons = createGlobalStyle`
-  @font-face {
+  /* @font-face {
     font-family: 'icons';
     src:  url(${require('@assets/icons/icons.ttf')});
-    /* src:  url('./assets/icons/icons.eot?mbjhc7');
-    src:  url('./assets/icons/icons.eot?mbjhc7#iefix') format('embedded-opentype'),
-      url('./assets/icons/icons.ttf?mbjhc7') format('truetype'),
-      url('./assets/icons/icons.woff?mbjhc7') format('woff'),
-      url('./assets/icons/icons.svg?mbjhc7#icons') format('svg'); */
     font-weight: normal;
     font-style: normal;
     font-display: block;
@@ -93,7 +88,7 @@ const Icons = createGlobalStyle`
   }
   .icon-pencil:before {
     content: "\\e902";
-  }
+  } */
 `
 
 const Wrapper = styled.div`
@@ -129,4 +124,4 @@ const Body = styled.div`
 	${forChildren('width: 100%')}
 `
 
-export { Reset, Fonts, Icons, Wrapper, Content, Body }
+export { Reset, Wrapper, Content, Body }

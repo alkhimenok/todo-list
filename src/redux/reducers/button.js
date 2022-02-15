@@ -23,11 +23,13 @@ const defaultButton = [
 const initialState = localStorage.getItem('buttonList') || defaultButton
 
 export const buttonReducer = (state = initialState, action) => {
-	switch (action.type) {
+	const { type, payload } = action
+
+	switch (type) {
 		case FOCUSED_BUTTON:
 			return [
 				...state.map((btn) => {
-					btn.id === action.payload.id
+					btn.id === payload.id
 						? (btn.isFocused = true)
 						: (btn.isFocused = false)
 
@@ -38,7 +40,7 @@ export const buttonReducer = (state = initialState, action) => {
 		case HIDE_BUTTON:
 			return [
 				...state.map((btn) => {
-					btn.id === action.payload.id ? (btn.isHide = true) : null
+					btn.id === payload.id ? (btn.isHide = true) : null
 
 					return btn
 				})
@@ -47,7 +49,7 @@ export const buttonReducer = (state = initialState, action) => {
 		case SHOW_BUTTON:
 			return [
 				...state.map((btn) => {
-					btn.id === action.payload.id ? (btn.isHide = false) : null
+					btn.id === payload.id ? (btn.isHide = false) : null
 
 					return btn
 				})

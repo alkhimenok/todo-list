@@ -3,12 +3,11 @@ import Header from '@components/header/Header'
 import Main from '@components/main/Main'
 import Footer from '@components/footer/Footer'
 import * as Styled from './styledApp'
+import './index.css'
 
 const App = () => {
 	return (
 		<>
-			<Styled.Fonts />
-			<Styled.Icons />
 			<Styled.Reset />
 
 			<Styled.Wrapper>
