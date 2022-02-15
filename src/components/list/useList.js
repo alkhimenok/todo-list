@@ -1,7 +1,13 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import { deleteTodo, checkTodo, changeTodo } from '@redux/actions/todo'
+import {
+	deleteTodo,
+	checkTodo,
+	changeTodo,
+	updateTodo
+} from '@redux/actions/todo'
 import { compressElement } from '@utils/animation'
+import { setListHeight } from '@scripts/listHeight'
 
 export const useList = () => {
 	const [unchangedValue, setUnchangedValue] = useState('')
@@ -9,6 +15,17 @@ export const useList = () => {
 	const [isActive, setActive] = useState(false)
 	const list = useSelector((state) => state.todo)
 	const dispatch = useDispatch()
+
+	useEffect(setListHeight, [list])
+
+	const handleDragEnd = (res) => {
+		const items = Array.from(list)
+		const [reorderItem] = items.splice(res.source.index, 1)
+
+		items.splice(res.destination.index, 0, reorderItem)
+
+		dispatch(updateTodo({ list: items }))
+	}
 
 	const handleClick = (e) => {
 		const { currentTarget, target } = e
@@ -61,6 +78,7 @@ export const useList = () => {
 		list,
 		unchangedValue,
 		isActive,
+		handleDragEnd,
 		handleClick,
 		handleActive,
 		handleApply

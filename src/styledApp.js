@@ -127,9 +127,6 @@ const Body = styled.div`
 		overflow: auto;
 	}
 	${forChildren('width: 100%')}
-	main {
-		flex: 1;
-	}
 `
 
 export { Reset, Fonts, Icons, Wrapper, Content, Body }

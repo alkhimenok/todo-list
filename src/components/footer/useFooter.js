@@ -5,9 +5,13 @@ import {
 	showEveryButton,
 	hideEveryButton,
 	focusedButton
-} from '../../redux/actions/button'
-import { showTodo, hideTodo } from '@redux/actions/todo'
-import { completedAllTodo, uncompletedAllTodo } from '../../redux/actions/todo'
+} from '@redux/actions/button'
+import {
+	showTodo,
+	hideTodo,
+	completedAllTodo,
+	uncompletedAllTodo
+} from '@redux/actions/todo'
 
 export const useFooter = () => {
 	const dispatch = useDispatch()
@@ -32,14 +36,13 @@ export const useFooter = () => {
 		}
 	}
 
-	useEffect(() => checkNav(), [list])
+	useEffect(checkNav, [list])
 
 	const handleClick = (e) => {
 		const { id } = e.target
 
-		list.forEach((todo) => {
-			dispatch(showTodo({ id: todo.id }))
-		})
+		list.forEach((todo) => dispatch(showTodo({ id: todo.id })))
+
 		dispatch(focusedButton({ id }))
 
 		if (id === 'active') {
@@ -59,9 +62,7 @@ export const useFooter = () => {
 				dispatch(focusedButton({ id }))
 			})
 		} else if (id === 'checkAll') {
-			// list.forEach((todo) => {
 			dispatch(completedAllTodo())
-			// })
 		} else if (id === 'clearCompleted') {
 			dispatch(uncompletedAllTodo())
 		}

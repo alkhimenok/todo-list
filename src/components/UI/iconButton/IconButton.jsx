@@ -19,9 +19,8 @@ const IconButton = ({ id, icon, isDisable, size, action }) => {
 IconButton.propTypes = {
 	id: PropTypes.string,
 	icon: PropTypes.string.isRequired,
-	size: PropTypes.string,
 	isDisable: PropTypes.bool,
-	handleClick: PropTypes.func,
+	size: PropTypes.string,
 	action: PropTypes.string
 }
 

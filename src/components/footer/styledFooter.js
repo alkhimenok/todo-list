@@ -1,7 +1,7 @@
 import styled from 'styled-components'
-import * as UNITS from '../../constants/units'
-import * as COLORS from '../../constants/colors'
-import { getDisplayFlex } from '../../utils/styled'
+import * as UNITS from '@constants/units'
+import * as COLORS from '@constants/colors'
+import { getDisplayFlex } from '@utils/styled'
 
 const FooterSection = styled.footer``
 const FooterTitle = styled.h3`

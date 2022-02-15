@@ -1,8 +1,8 @@
 import styled from 'styled-components'
-import * as UNITS from '../../../constants/units'
-import * as COLORS from '../../../constants/colors'
-import * as BORDERS from '../../../constants/borders'
-import * as TRANSITIONS from '../../../constants/transitions'
+import * as UNITS from '@constants/units'
+import * as COLORS from '@constants/colors'
+import * as BORDERS from '@constants/borders'
+import * as TRANSITIONS from '@constants/transitions'
 
 const CheckboxWrapper = styled.div`
 	display: inline-block;

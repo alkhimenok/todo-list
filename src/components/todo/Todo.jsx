@@ -12,6 +12,7 @@ const Todo = ({ id, title, isCompleted, isHide, onClick }) => {
 		<Styled.TodoWrapper
 			id={id}
 			isHide={isHide}
+			draggable={true}
 			onMouseOver={handleMouseOver}
 			onMouseOut={handleMouseOut}
 			onClick={onClick}

@@ -1,4 +1,5 @@
 import React from 'react'
+import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd'
 import Todo from '@components/todo/Todo'
 import Modal from './modal/Modal'
 import * as Styled from './styledList'
@@ -9,30 +10,47 @@ const List = () => {
 		list,
 		unchangedValue,
 		isActive,
+		handleDragEnd,
 		handleClick,
 		handleActive,
 		handleApply
 	} = useList()
 
 	return (
-		<Styled.ListWrapper>
-			{list.map(({ id, title, isCompleted, isHide }) => (
-				<Todo
-					id={id}
-					key={id}
-					title={title}
-					isCompleted={isCompleted}
-					isHide={isHide}
-					onClick={handleClick}
-				/>
-			))}
-			<Modal
-				unchangedValue={unchangedValue}
-				isActive={isActive}
-				onActive={handleActive}
-				onSubmit={handleApply}
-			/>
-		</Styled.ListWrapper>
+		<DragDropContext onDragEnd={handleDragEnd}>
+			<Droppable droppableId='droppable-1'>
+				{(provided) => (
+					<Styled.ListWrapper id='list' ref={provided.innerRef}>
+						{list.map(({ id, title, isCompleted, isHide }, i) => (
+							<Draggable draggableId={`draggable-${id}`} index={i} key={id}>
+								{(provided) => (
+									<div
+										ref={provided.innerRef}
+										{...provided.draggableProps}
+										{...provided.dragHandleProps}
+									>
+										<Todo
+											id={id}
+											title={title}
+											isCompleted={isCompleted}
+											isHide={isHide}
+											onClick={handleClick}
+										/>
+									</div>
+								)}
+							</Draggable>
+						))}
+						{provided.placeholder}
+						<Modal
+							unchangedValue={unchangedValue}
+							isActive={isActive}
+							onActive={handleActive}
+							onApply={handleApply}
+						/>
+					</Styled.ListWrapper>
+				)}
+			</Droppable>
+		</DragDropContext>
 	)
 }
 

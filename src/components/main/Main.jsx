@@ -6,7 +6,7 @@ import * as Styled from './styledMain'
 
 const Main = () => {
 	return (
-		<Styled.MainSection>
+		<Styled.MainSection id='main'>
 			<Styled.MainFormWrapper>
 				<Container>
 					<Form />

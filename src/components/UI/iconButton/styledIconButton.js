@@ -1,8 +1,8 @@
 import styled from 'styled-components'
-import * as UNITS from '../../../constants/units'
-import * as COLORS from '../../../constants/colors'
-import * as TRANSPARENCY from '../../../constants/transparency'
-import * as TRANSITIONS from '../../../constants/transitions'
+import * as UNITS from '@constants/units'
+import * as COLORS from '@constants/colors'
+import * as TRANSPARENCY from '@constants/transparency'
+import * as TRANSITIONS from '@constants/transitions'
 
 const onHover = {
 	drag: `color: ${COLORS.TRANSPARENCY_SECONDARY}; cursor: ns-resize;`,

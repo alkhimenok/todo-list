@@ -1,53 +1,53 @@
 import {
 	ADD_TODO,
 	DELETE_TODO,
-	HIDE_TODO,
-	SHOW_TODO,
 	CHECK_TODO,
 	CHANGE_TODO,
+	UPDATE_TODO,
+	HIDE_TODO,
+	SHOW_TODO,
 	COMPLETED_ALL_TODO,
 	UNCOMPLETED_ALL_TODO
 } from '@redux/types/todo'
 
+// list
 const addTodo = (payload) => {
-	return { type: ADD_TODO, payload }
+	return { type: ADD_TODO, payload } // id, title
 }
-
 const deleteTodo = (payload) => {
-	return { type: DELETE_TODO, payload }
+	return { type: DELETE_TODO, payload } // id
 }
-
-const hideTodo = (payload) => {
-	return { type: HIDE_TODO, payload }
-}
-
-const showTodo = (payload) => {
-	return { type: SHOW_TODO, payload }
-}
-
 const checkTodo = (payload) => {
-	return { type: CHECK_TODO, payload }
+	return { type: CHECK_TODO, payload } // id
 }
-
 const changeTodo = (payload) => {
-	return { type: CHANGE_TODO, payload }
+	return { type: CHANGE_TODO, payload } // id, title
 }
-
-const completedAllTodo = (payload) => {
-	return { type: COMPLETED_ALL_TODO, payload }
+const updateTodo = (payload) => {
+	return { type: UPDATE_TODO, payload } // list
 }
-
-const uncompletedAllTodo = (payload) => {
-	return { type: UNCOMPLETED_ALL_TODO, payload }
+// filter
+const hideTodo = (payload) => {
+	return { type: HIDE_TODO, payload } // id
+}
+const showTodo = (payload) => {
+	return { type: SHOW_TODO, payload } // id
+}
+const completedAllTodo = () => {
+	return { type: COMPLETED_ALL_TODO } //
+}
+const uncompletedAllTodo = () => {
+	return { type: UNCOMPLETED_ALL_TODO } //
 }
 
 export {
 	addTodo,
 	deleteTodo,
-	hideTodo,
-	showTodo,
 	checkTodo,
 	changeTodo,
+	updateTodo,
+	hideTodo,
+	showTodo,
 	completedAllTodo,
 	uncompletedAllTodo
 }

@@ -1,7 +1,7 @@
 import styled from 'styled-components'
-import * as UNITS from '../../constants/units'
-import * as FONTS from '../../constants/fonts'
-import * as BREAKPOINTS from '../../constants/breakpoints'
+import * as UNITS from '@constants/units'
+import * as FONTS from '@constants/fonts'
+import * as BREAKPOINTS from '@constants/breakpoints'
 
 const HeaderSection = styled.header`
 	text-align: center;

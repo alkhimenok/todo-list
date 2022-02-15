@@ -1,53 +1,28 @@
 import {
 	FOCUSED_BUTTON,
-	UNFOCUSED_BUTTON,
 	HIDE_BUTTON,
 	SHOW_BUTTON,
 	HIDE_EVERY_BUTTON,
-	SHOW_EVERY_BUTTON,
-	DISABLE_BUTTON,
-	UNABLE_BUTTON
+	SHOW_EVERY_BUTTON
 } from '@redux/types/button'
 
-const initialState = localStorage.getItem('buttonList') || [
-	{
-		id: 'checkAll',
-		content: 'Check all',
-		isFocused: false,
-		isHide: true,
-		isDisable: false
-	},
-	{
-		id: 'all',
-		content: 'All',
-		isFocused: false,
-		isHide: true,
-		isDisable: false
-	},
-	{
-		id: 'active',
-		content: 'Active',
-		isFocused: false,
-		isHide: true,
-		isDisable: false
-	},
-	{
-		id: 'completed',
-		content: 'Completed',
-		isFocused: false,
-		isHide: true,
-		isDisable: false
-	},
-	{
-		id: 'clearCompleted',
-		content: 'Clear completed',
-		isFocused: false,
-		isHide: true,
-		isDisable: false
-	}
-]
+const defaultButton = [
+	{ id: 'checkAll', content: 'Check all' },
+	{ id: 'all', content: 'All' },
+	{ id: 'active', content: 'Active' },
+	{ id: 'completed', content: 'Completed' },
+	{ id: 'clearCompleted', content: 'Clear completed' }
+].map((btn) => {
+	btn.isFocused = false
+	btn.isHide = true
+	btn.isDisable = false
 
-export const buttonList = (state = initialState, action) => {
+	return btn
+})
+
+const initialState = localStorage.getItem('buttonList') || defaultButton
+
+export const buttonReducer = (state = initialState, action) => {
 	switch (action.type) {
 		case FOCUSED_BUTTON:
 			return [
@@ -59,15 +34,6 @@ export const buttonList = (state = initialState, action) => {
 					return btn
 				})
 			]
-
-		// case UNFOCUSED_BUTTON:
-		// 	return [
-		// 		...state.map((btn) => {
-		// 			btn.id === action.payload.id ? (btn.isFocused = false) : null
-
-		// 			return btn
-		// 		})
-		// 	]
 
 		case HIDE_BUTTON:
 			return [
@@ -100,24 +66,6 @@ export const buttonList = (state = initialState, action) => {
 			return [
 				...state.map((btn) => {
 					btn.isHide = false
-
-					return btn
-				})
-			]
-
-		case DISABLE_BUTTON:
-			return [
-				...state.map((btn) => {
-					btn.isDisable = true
-
-					return btn
-				})
-			]
-
-		case UNABLE_BUTTON:
-			return [
-				...state.map((btn) => {
-					btn.id === action.payload.id ? (btn.isDisable = false) : null
 
 					return btn
 				})

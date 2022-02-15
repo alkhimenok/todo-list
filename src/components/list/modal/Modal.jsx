@@ -5,10 +5,10 @@ import Button from '@components/UI/button/Button'
 import * as Styled from './styledModal'
 import { useModal } from './useModal'
 
-const Modal = ({ unchangedValue, isActive, onActive, onSubmit }) => {
+const Modal = ({ unchangedValue, isActive, onActive, onApply }) => {
 	const { value, isDisable, handleChangeValue, handleSubmit } = useModal(
 		unchangedValue,
-		onSubmit
+		onApply
 	)
 
 	return (
@@ -42,7 +42,7 @@ Modal.propTypes = {
 	unchangedValue: PropTypes.string,
 	isActive: PropTypes.bool.isRequired,
 	onActive: PropTypes.func.isRequired,
-	onSubmit: PropTypes.func
+	onApply: PropTypes.func
 }
 
 export default Modal

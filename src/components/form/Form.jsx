@@ -8,7 +8,7 @@ const Form = () => {
 	const { value, isHide, handleChange, handleSubmit } = useForm()
 
 	return (
-		<Styled.FormWrapper onSubmit={handleSubmit}>
+		<Styled.FormWrapper id='form' onSubmit={handleSubmit}>
 			<Styled.FormInputWrapper>
 				<Input
 					label={'Add new todo...'}

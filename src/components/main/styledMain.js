@@ -1,7 +1,8 @@
 import styled from 'styled-components'
-import * as UNITS from '../../constants/units'
+import * as UNITS from '@constants/units'
 
 const MainSection = styled.main`
+	flex: 1;
 	padding: ${UNITS.XL_SIZE} 0;
 `
 const MainFormWrapper = styled.div``

@@ -1,9 +1,9 @@
 import styled from 'styled-components'
-import * as UNITS from '../../../constants/units'
-import * as FONTS from '../../../constants/fonts'
-import * as COLORS from '../../../constants/colors'
-import * as BORDERS from '../../../constants/borders'
-import * as TRANSITIONS from '../../../constants/transitions'
+import * as UNITS from '@constants/units'
+import * as FONTS from '@constants/fonts'
+import * as COLORS from '@constants/colors'
+import * as BORDERS from '@constants/borders'
+import * as TRANSITIONS from '@constants/transitions'
 
 const CardWrapper = styled.div`
 	padding: ${UNITS.SM_SIZE};
