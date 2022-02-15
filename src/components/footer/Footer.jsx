@@ -10,7 +10,7 @@ const Footer = () => {
 	const { totalTasks, numberOfTask, buttons, handleClick } = useFooter()
 
 	return (
-		<Styled.FooterSection>
+		<Styled.FooterSection id='footer'>
 			<Container>
 				{!totalTasks ? (
 					<Styled.FooterTitle>

@@ -12,7 +12,7 @@ const App = () => {
 
 			<Styled.Wrapper>
 				<Styled.Content>
-					<Styled.Body>
+					<Styled.Body id='body'>
 						<Header />
 						<Main />
 						<Footer />
