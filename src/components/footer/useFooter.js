@@ -33,6 +33,13 @@ export const useFooter = () => {
 			dispatch(focusedButton({ id: 'all' }))
 		} else {
 			dispatch(showEveryButton())
+			if (list.every((todo) => !todo.isHide)) {
+				dispatch(focusedButton({ id: 'all' }))
+			} else if (list.some((todo) => todo.isHide && todo.isCompleted)) {
+				dispatch(focusedButton({ id: 'active' }))
+			} else {
+				dispatch(focusedButton({ id: 'completed' }))
+			}
 		}
 	}
 

@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
+import { useBeforeunload } from 'react-beforeunload'
 import {
 	deleteTodo,
 	checkTodo,
@@ -17,6 +18,7 @@ export const useList = () => {
 	const dispatch = useDispatch()
 
 	useEffect(setListHeight, [list])
+	useBeforeunload(() => localStorage.setItem('todo', JSON.stringify(list)))
 
 	const handleDragEnd = (res) => {
 		const items = Array.from(list)

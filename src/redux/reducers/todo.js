@@ -10,7 +10,7 @@ import {
 	UNCOMPLETED_ALL_TODO
 } from '@redux/types/todo'
 
-const initialState = localStorage.getItem('todo') || []
+const initialState = JSON.parse(localStorage.getItem('todo')) || []
 
 export const todoReducer = (state = initialState, action) => {
 	const { type, payload } = action

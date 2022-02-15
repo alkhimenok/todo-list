@@ -20,7 +20,8 @@ const defaultButton = [
 	return btn
 })
 
-const initialState = localStorage.getItem('buttonList') || defaultButton
+const initialState =
+	JSON.parse(localStorage.getItem('buttonList')) || defaultButton
 
 export const buttonReducer = (state = initialState, action) => {
 	const { type, payload } = action
