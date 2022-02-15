@@ -1,8 +1,8 @@
 import styled from 'styled-components'
-import * as UNITS from '../../constants/units'
-import * as BORDERS from '../../constants/borders'
-import * as TRANSITIONS from '../../constants/transitions'
-import { getDisplayFlex } from '../../utils/styled'
+import * as UNITS from '@constants/units'
+import * as BORDERS from '@constants/borders'
+import * as TRANSITIONS from '@constants/transitions'
+import { getDisplayFlex } from '@utils/styled'
 
 const FormWrapper = styled.form`
 	${getDisplayFlex()}

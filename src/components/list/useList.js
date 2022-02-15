@@ -20,9 +20,11 @@ export const useList = () => {
 
 	const handleDragEnd = (res) => {
 		const items = Array.from(list)
-		const [reorderItem] = items.splice(res.source.index, 1)
+		const src = res.source.index
+		const dest = res?.destination?.index ?? src
+		const [reorderItem] = items.splice(src, 1)
 
-		items.splice(res.destination.index, 0, reorderItem)
+		items.splice(dest, 0, reorderItem)
 
 		dispatch(updateTodo({ list: items }))
 	}
@@ -36,8 +38,6 @@ export const useList = () => {
 			deleteCurrentTodo(id, title, currentTarget)
 		} else if (action === 'edit') {
 			editCurrentTarget(id, title)
-		} else if (action === 'drag') {
-			return
 		} else {
 			checkCurrentTodo(id, title)
 		}

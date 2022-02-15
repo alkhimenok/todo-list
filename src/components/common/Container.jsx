@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
-import * as UNITS from '../../constants/units'
+import * as UNITS from '@constants/units'
 
 const Container = ({ isList, children }) => {
 	return <ContainerWrapper isList={isList}>{children}</ContainerWrapper>

@@ -1,8 +1,8 @@
 import styled from 'styled-components'
-import * as UNITS from '../../constants/units'
-import * as TRANSPARENCY from '../../constants/transparency'
-import * as TRANSITIONS from '../../constants/transitions'
-import { getDisplayFlex } from '../../utils/styled'
+import * as UNITS from '@constants/units'
+import * as TRANSPARENCY from '@constants/transparency'
+import * as TRANSITIONS from '@constants/transitions'
+import { getDisplayFlex } from '@utils/styled'
 
 const TodoWrapper = styled.li`
 	position: relative;
@@ -14,9 +14,9 @@ const TodoWrapper = styled.li`
 `
 const TodoDrag = styled.div`
 	transition: ${TRANSITIONS.SHORT};
+	pointer-events: none;
 	@media screen and (hover: hover) {
-		${({ isHovered }) =>
-			isHovered || `opacity: ${TRANSPARENCY.INVISIBLE}; pointer-events: none;`};
+		${({ isHovered }) => isHovered || `opacity: ${TRANSPARENCY.INVISIBLE};`};
 	}
 `
 const TodoContent = styled.h3`
